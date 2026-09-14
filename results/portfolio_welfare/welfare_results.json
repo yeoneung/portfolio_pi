@@ -1,0 +1,188 @@
+{
+  "certified": true,
+  "results": [
+    {
+      "market": {
+        "gamma": "2",
+        "risk_free_rate": "0",
+        "radius": "2",
+        "horizon": "1/4",
+        "kappa": "1",
+        "state_variance": "1/4",
+        "sigma12": "1/4",
+        "mu0": [
+          "1/5",
+          "3/20"
+        ],
+        "mu1": [
+          "1/2",
+          "-1/4"
+        ],
+        "cross": [
+          "1/5",
+          "1/10"
+        ],
+        "caps": [
+          "3/10",
+          "1/4"
+        ]
+      },
+      "mode": "greedy",
+      "certificate": {
+        "certified": true,
+        "covered_area_exact": "1",
+        "accepted_cells": 977,
+        "switching_cells": 336,
+        "visited_cells": 1953,
+        "u_lower": 0.9324999999999999,
+        "residual_sup_upper": 0.00024926889333256805,
+        "possible_active_sets": [
+          [
+            -1,
+            0
+          ],
+          [
+            -1,
+            1
+          ],
+          [
+            0,
+            -1
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            1,
+            -1
+          ]
+        ]
+      },
+      "bounds": {
+        "scope": "whole-space CRRA model at t=0, z=0",
+        "mode": "greedy",
+        "candidate_at_initial_state_exact": "438143039799219/439804651110400",
+        "cplus_exact": "33/100",
+        "barrier_factor_upper": 0.26060204072441384,
+        "dirichlet_value_error_upper": 6.495998229158347e-05,
+        "value_localization_upper": 5.907189923523692e-07,
+        "a0_exact": "1/50",
+        "a1_exact": "98/25",
+        "lambda0_exact": "976339/3980000",
+        "lambda1_exact": "8369881/3920000",
+        "initial_state_exact": "0",
+        "weight": "exp(a*z^2)",
+        "whole_space_factor_interval": [
+          0.9961563825889032,
+          0.9962874839914713
+        ],
+        "whole_space_ce_interval": [
+          1.003726350143088,
+          1.0038584478082726
+        ],
+        "whole_space_utility_regret_upper": 0.00013110140256787167,
+        "relative_ce_loss_upper": 0.00013158993229833108,
+        "relative_ce_loss_bp_upper": 1.315899322983311,
+        "deployment": "exact Sigma-QP greedy policy inside D_R; zero risky weights outside D_R"
+      },
+      "candidate_sha256": "feaaa88851b46fe50b6989b97f41a9fa76388318743fe03b39ea8e21c29f639d"
+    },
+    {
+      "market": {
+        "gamma": "2",
+        "risk_free_rate": "0",
+        "radius": "2",
+        "horizon": "1/4",
+        "kappa": "1",
+        "state_variance": "1/4",
+        "sigma12": "1/4",
+        "mu0": [
+          "1/5",
+          "3/20"
+        ],
+        "mu1": [
+          "1/2",
+          "-1/4"
+        ],
+        "cross": [
+          "1/5",
+          "1/10"
+        ],
+        "caps": [
+          "3/10",
+          "1/4"
+        ]
+      },
+      "mode": "myopic",
+      "certificate": {
+        "certified": true,
+        "covered_area_exact": "1",
+        "accepted_cells": 975,
+        "switching_cells": 335,
+        "visited_cells": 1949,
+        "u_lower": 0.9324999999999999,
+        "residual_sup_upper": 0.0002494598565598188,
+        "possible_active_sets": [
+          [
+            -1,
+            0
+          ],
+          [
+            -1,
+            1
+          ],
+          [
+            0,
+            -1
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            1,
+            -1
+          ]
+        ]
+      },
+      "bounds": {
+        "scope": "whole-space CRRA model at t=0, z=0",
+        "mode": "myopic",
+        "candidate_at_initial_state_exact": "219071533532797/219902325555200",
+        "cplus_exact": "33/100",
+        "barrier_factor_upper": 0.26060204072441384,
+        "dirichlet_value_error_upper": 6.500974769830832e-05,
+        "value_localization_upper": 5.907189923523692e-07,
+        "a0_exact": "1/50",
+        "a1_exact": "98/25",
+        "lambda0_exact": "976339/3980000",
+        "lambda1_exact": "8369881/3920000",
+        "initial_state_exact": "0",
+        "weight": "exp(a*z^2)",
+        "whole_space_factor_interval": [
+          0.9961563948200555,
+          0.996287595753437
+        ],
+        "whole_space_ce_interval": [
+          1.0037262375466547,
+          1.003858435482552
+        ],
+        "deployment": "same exact Sigma-QP myopic policy on the whole state space"
+      },
+      "candidate_sha256": "7057a6c079269ea7cdb0eadc2b6981430c4cfd949ad800cca29cc627ad868497"
+    }
+  ],
+  "optimal_minus_myopic_ce_interval": [
+    0.0,
+    0.00013221026161791552
+  ],
+  "raw_ce_difference_interval": [
+    -0.00013208533946396098,
+    0.00013221026161791552
+  ],
+  "strict_dynamic_advantage_certified": false,
+  "seconds": 29.438036200008355,
+  "verifier_sha256": "1f9af15c8b9897e1c9596bd89e4ecc53e4016263eef5675e3daf0034479b444c",
+  "arithmetic_core_sha256": "5214d36d1ccfd01aae4b0a7f4e2d883c317becfe84ae50b49801d212e54a31c2"
+}

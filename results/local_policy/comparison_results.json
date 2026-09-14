@@ -1,0 +1,379 @@
+{
+  "certified": true,
+  "policy_sha256": "feaaa88851b46fe50b6989b97f41a9fa76388318743fe03b39ea8e21c29f639d",
+  "policy_updates": 0,
+  "comparison": [
+    {
+      "label": "Global $(32,64)$",
+      "degrees_of_freedom": 2145,
+      "quadratic_localization_bounds": {
+        "scope": "same fixed whole-space greedy policy at t=0, z=0; gamma=2",
+        "evaluation_initial_exact": "219070444476497/219902325555200",
+        "phi_upper": 0.26060204072441384,
+        "value_localization_upper": 5.907189923523692e-07,
+        "a0_exact": "1/50",
+        "a1_exact": "98/25",
+        "lambda0_exact": "976339/3980000",
+        "lambda1_exact": "8369881/3920000",
+        "initial_state_exact": "0",
+        "weight": "exp(a*z^2)",
+        "evaluation_factor_error_upper": 5.795039560375719e-06,
+        "whole_space_policy_factor_interval": [
+          0.9962112477925118,
+          0.9962228378716328
+        ],
+        "whole_space_policy_ce_interval": [
+          1.0037914831750259,
+          1.0038031614438039
+        ],
+        "unit_wealth_utility_loss_upper": 1.1590095952158615e-05,
+        "relative_ce_loss_bp_upper": 0.11634174958213853
+      },
+      "finite_horizon_bounds": {
+        "value_localization_upper": 6.172761843835907e-17,
+        "exit_probability_upper": 2.6414833892847912e-17,
+        "partition_count": 32,
+        "initial_state_exact": "0",
+        "a0_exact": "1/50",
+        "lambda0_exact": "976339/3980000",
+        "drift_bound_exact": "17/200",
+        "cplus_exact": "33/100",
+        "continuation_discrepancy_upper": 2.151802177529176,
+        "method": "finite-partition exponential-martingale exit bound",
+        "evaluation_factor_error_upper": 5.204320568085078e-06,
+        "unit_wealth_utility_loss_upper": 1.0408657967577333e-05,
+        "policy_factor_lower": 0.9962118385115041,
+        "relative_ce_loss_bp_upper": 0.10448237578795984,
+        "budget_bp": {
+          "evaluation": 0.10448220683262341,
+          "improvement_gap": 1.6895409717732698e-07,
+          "localization": 1.2392468359057e-12
+        },
+        "evaluation_initial_exact": "219070444476497/219902325555200",
+        "whole_space_policy_factor_interval": [
+          0.9962118385115041,
+          0.9962222471526405
+        ],
+        "whole_space_policy_ce_interval": [
+          1.0037920783822651,
+          1.0038025662234211
+        ]
+      },
+      "verification_seconds": 238.69674310000846,
+      "certificate": {
+        "certified": true,
+        "covered_area_exact": "1",
+        "visited_cells": 4782,
+        "accepted_cells": 2399,
+        "switching_cells": 809,
+        "frozen_residual_upper": 1.9970375341484412e-05,
+        "hamiltonian_gap_upper": 6.45866284489568e-11,
+        "u_lower": 0.9324999999999999,
+        "v_lower": 0.9324999999999999
+      }
+    },
+    {
+      "label": "Local $(16,38)$",
+      "degrees_of_freedom": 4522,
+      "fitting_seconds_recorded": 4.728121199994348,
+      "quadratic_localization_bounds": {
+        "value_localization_upper": 5.907189923523692e-07,
+        "a0_exact": "1/50",
+        "a1_exact": "98/25",
+        "lambda0_exact": "976339/3980000",
+        "lambda1_exact": "8369881/3920000",
+        "initial_state_exact": "0",
+        "weight": "exp(a*z^2)",
+        "evaluation_factor_error_upper": 1.4985614792087596e-06,
+        "unit_wealth_utility_loss_upper": 2.9971386515806413e-06,
+        "policy_factor_lower": 0.996215470947489,
+        "relative_ce_loss_bp_upper": 0.030085244999559158,
+        "budget_bp": {
+          "evaluation": 0.01822582590477042,
+          "improvement_gap": 1.5752779975654237e-07,
+          "localization": 0.011859261566988981
+        },
+        "evaluation_initial_exact": "7010253707282429/7036874417766400",
+        "whole_space_policy_factor_interval": [
+          0.996215470947489,
+          0.9962184680704476
+        ],
+        "whole_space_policy_ce_interval": [
+          1.0037958861943972,
+          1.0037989061231019
+        ]
+      },
+      "finite_horizon_bounds": {
+        "value_localization_upper": 6.172761843835907e-17,
+        "exit_probability_upper": 2.6414833892847912e-17,
+        "partition_count": 32,
+        "initial_state_exact": "0",
+        "a0_exact": "1/50",
+        "lambda0_exact": "976339/3980000",
+        "drift_bound_exact": "17/200",
+        "cplus_exact": "33/100",
+        "continuation_discrepancy_upper": 2.151802177529176,
+        "method": "finite-partition exponential-martingale exit bound",
+        "evaluation_factor_error_upper": 9.07842486918118e-07,
+        "unit_wealth_utility_loss_upper": 1.8157006669993582e-06,
+        "policy_factor_lower": 0.9962160616664812,
+        "relative_ce_loss_bp_upper": 0.018225972626480586,
+        "budget_bp": {
+          "evaluation": 0.018225815097534997,
+          "improvement_gap": 1.575277063484287e-07,
+          "localization": 1.2392415824956774e-12
+        },
+        "evaluation_initial_exact": "7010253707282429/7036874417766400",
+        "whole_space_policy_factor_interval": [
+          0.9962160616664812,
+          0.9962178773514553
+        ],
+        "whole_space_policy_ce_interval": [
+          1.003796481406858,
+          1.0037983109077653
+        ]
+      },
+      "certified": true,
+      "certificate": {
+        "certified": true,
+        "covered_area_exact": "1",
+        "visited_cells": 1926,
+        "accepted_cells": 1039,
+        "switching_cells": 313,
+        "frozen_residual_upper": 3.4836353711306206e-06,
+        "hamiltonian_gap_upper": 6.02188803992293e-11,
+        "u_lower": 0.9324999999999999,
+        "v_lower": 0.9324999999999999
+      },
+      "traces": {
+        "terminal_trace_exact": true,
+        "lateral_trace_exact": true,
+        "spatial_C1_exact": true,
+        "interfaces_checked": 37,
+        "graded_time_derivative_bounded": true
+      },
+      "policy_sha256": "feaaa88851b46fe50b6989b97f41a9fa76388318743fe03b39ea8e21c29f639d",
+      "evaluation_sha256": "8d7aa5ac263ab1fd0c81047133a2d6adceaca2451c80338c52f7c72f0077bd60",
+      "source_sha256": {
+        "experiments/local_policy_evaluation.py": "daf8f3e12d965555eb7ebae2c4de01c154a74ff27828aff3db3c56e4f19946a7",
+        "experiments/verify_local_policy.py": "1337a6a158c6c84d0a81c1f61c95db8729e842a807f3245a06255a82e7f0caf5",
+        "experiments/finite_horizon_localization.py": "f090b1aee2cc072978187d29b45ca336d9ab5f1af865388182be9b2ae3478d51",
+        "experiments/policy_loss_certificate.py": "7f38c1ec7602b5d338ddf88dbecab52845e08aedca56f4cabd382321d0fae906",
+        "experiments/portfolio_welfare.py": "1f9af15c8b9897e1c9596bd89e4ecc53e4016263eef5675e3daf0034479b444c",
+        "experiments/bernstein_arithmetic.py": "16caa218df273b0f5eb54e35537149c82c42b3ac20c4dd5641de3e0485991772",
+        "experiments/direct_residual_certificate.py": "5214d36d1ccfd01aae4b0a7f4e2d883c317becfe84ae50b49801d212e54a31c2"
+      },
+      "policy_updates": 0,
+      "verification_seconds": 50.01180979999481,
+      "target_residual": 3.5e-06,
+      "time_levels": 2,
+      "space_intervals": 38,
+      "time_power": 2,
+      "bounds": {
+        "value_localization_upper": 6.172761843835907e-17,
+        "exit_probability_upper": 2.6414833892847912e-17,
+        "partition_count": 32,
+        "initial_state_exact": "0",
+        "a0_exact": "1/50",
+        "lambda0_exact": "976339/3980000",
+        "drift_bound_exact": "17/200",
+        "cplus_exact": "33/100",
+        "continuation_discrepancy_upper": 2.151802177529176,
+        "method": "finite-partition exponential-martingale exit bound",
+        "evaluation_factor_error_upper": 9.07842486918118e-07,
+        "unit_wealth_utility_loss_upper": 1.8157006669993582e-06,
+        "policy_factor_lower": 0.9962160616664812,
+        "relative_ce_loss_bp_upper": 0.018225972626480586,
+        "budget_bp": {
+          "evaluation": 0.018225815097534997,
+          "improvement_gap": 1.575277063484287e-07,
+          "localization": 1.2392415824956774e-12
+        },
+        "evaluation_initial_exact": "7010253707282429/7036874417766400",
+        "whole_space_policy_factor_interval": [
+          0.9962160616664812,
+          0.9962178773514553
+        ],
+        "whole_space_policy_ce_interval": [
+          1.003796481406858,
+          1.0037983109077653
+        ]
+      },
+      "uniform_inner_bounds": {
+        "value_localization_upper": 1.1003654903712567e-10,
+        "exit_probability_upper": 4.708746649379327e-11,
+        "partition_count": 32,
+        "initial_state_exact": "1/2",
+        "a0_exact": "1/50",
+        "lambda0_exact": "976339/3980000",
+        "drift_bound_exact": "17/200",
+        "cplus_exact": "33/100",
+        "continuation_discrepancy_upper": 2.151802177529176,
+        "method": "finite-partition exponential-martingale exit bound",
+        "evaluation_factor_error_upper": 9.079525234054275e-07,
+        "unit_wealth_utility_loss_upper": 1.8159207399739771e-06,
+        "policy_factor_lower": 0.9324990920474763,
+        "relative_ce_loss_bp_upper": 0.019473699818696698,
+        "budget_bp": {
+          "evaluation": 0.019471171491718075,
+          "improvement_gap": 1.682914573967175e-07,
+          "localization": 2.360035521225438e-06
+        },
+        "scope": "all 0<=t<=T and |z|<=the stated initial-state radius"
+      }
+    },
+    {
+      "label": "Local $(24,70)$",
+      "degrees_of_freedom": 12250,
+      "fitting_seconds_recorded": 23.91259739996167,
+      "quadratic_localization_bounds": {
+        "value_localization_upper": 5.907189923523692e-07,
+        "a0_exact": "1/50",
+        "a1_exact": "98/25",
+        "lambda0_exact": "976339/3980000",
+        "lambda1_exact": "8369881/3920000",
+        "initial_state_exact": "0",
+        "weight": "exp(a*z^2)",
+        "evaluation_factor_error_upper": 8.241076018602783e-07,
+        "unit_wealth_utility_loss_upper": 1.6482308472742012e-06,
+        "policy_factor_lower": 0.9962161451985703,
+        "relative_ce_loss_bp_upper": 0.016544912017518735,
+        "budget_bp": {
+          "evaluation": 0.00468550144730668,
+          "improvement_gap": 1.570297140825187e-07,
+          "localization": 0.01185925354049797
+        },
+        "evaluation_initial_exact": "7010253705855379/7036874417766400",
+        "whole_space_policy_factor_interval": [
+          0.9962161451985703,
+          0.9962177934137743
+        ],
+        "whole_space_policy_ce_interval": [
+          1.0037965659830916,
+          1.0037982267399166
+        ]
+      },
+      "finite_horizon_bounds": {
+        "value_localization_upper": 6.172761843835907e-17,
+        "exit_probability_upper": 2.6414833892847912e-17,
+        "partition_count": 32,
+        "initial_state_exact": "0",
+        "a0_exact": "1/50",
+        "lambda0_exact": "976339/3980000",
+        "drift_bound_exact": "17/200",
+        "cplus_exact": "33/100",
+        "continuation_discrepancy_upper": 2.151802177529176,
+        "method": "finite-partition exponential-martingale exit bound",
+        "evaluation_factor_error_upper": 2.3338860956963674e-07,
+        "unit_wealth_utility_loss_upper": 4.6679286269291797e-07,
+        "policy_factor_lower": 0.9962167359175625,
+        "relative_ce_loss_bp_upper": 0.004685655699841057,
+        "budget_bp": {
+          "evaluation": 0.004685498668980846,
+          "improvement_gap": 1.570296209698143e-07,
+          "localization": 1.2392407437625516e-12
+        },
+        "evaluation_initial_exact": "7010253705855379/7036874417766400",
+        "whole_space_policy_factor_interval": [
+          0.9962167359175625,
+          0.996217202694782
+        ],
+        "whole_space_policy_ce_interval": [
+          1.0037971611963588,
+          1.0037976315253858
+        ]
+      },
+      "certified": true,
+      "certificate": {
+        "certified": true,
+        "covered_area_exact": "1",
+        "visited_cells": 2076,
+        "accepted_cells": 1178,
+        "switching_cells": 315,
+        "frozen_residual_upper": 8.955747578151821e-07,
+        "hamiltonian_gap_upper": 6.00285155135645e-11,
+        "u_lower": 0.9324999999999999,
+        "v_lower": 0.9324999999999999
+      },
+      "traces": {
+        "terminal_trace_exact": true,
+        "lateral_trace_exact": true,
+        "spatial_C1_exact": true,
+        "interfaces_checked": 69,
+        "graded_time_derivative_bounded": true
+      },
+      "policy_sha256": "feaaa88851b46fe50b6989b97f41a9fa76388318743fe03b39ea8e21c29f639d",
+      "evaluation_sha256": "7033b54d1156280590e6dcfea31fd2e8712f998e61c3216ba85ee1cb49ffa3c8",
+      "source_sha256": {
+        "experiments/local_policy_evaluation.py": "daf8f3e12d965555eb7ebae2c4de01c154a74ff27828aff3db3c56e4f19946a7",
+        "experiments/verify_local_policy.py": "1337a6a158c6c84d0a81c1f61c95db8729e842a807f3245a06255a82e7f0caf5",
+        "experiments/finite_horizon_localization.py": "f090b1aee2cc072978187d29b45ca336d9ab5f1af865388182be9b2ae3478d51",
+        "experiments/policy_loss_certificate.py": "7f38c1ec7602b5d338ddf88dbecab52845e08aedca56f4cabd382321d0fae906",
+        "experiments/portfolio_welfare.py": "1f9af15c8b9897e1c9596bd89e4ecc53e4016263eef5675e3daf0034479b444c",
+        "experiments/bernstein_arithmetic.py": "16caa218df273b0f5eb54e35537149c82c42b3ac20c4dd5641de3e0485991772",
+        "experiments/direct_residual_certificate.py": "5214d36d1ccfd01aae4b0a7f4e2d883c317becfe84ae50b49801d212e54a31c2"
+      },
+      "policy_updates": 0,
+      "verification_seconds": 100.52587710000807,
+      "target_residual": 9e-07,
+      "time_levels": 2,
+      "space_intervals": 70,
+      "time_power": 2,
+      "bounds": {
+        "value_localization_upper": 6.172761843835907e-17,
+        "exit_probability_upper": 2.6414833892847912e-17,
+        "partition_count": 32,
+        "initial_state_exact": "0",
+        "a0_exact": "1/50",
+        "lambda0_exact": "976339/3980000",
+        "drift_bound_exact": "17/200",
+        "cplus_exact": "33/100",
+        "continuation_discrepancy_upper": 2.151802177529176,
+        "method": "finite-partition exponential-martingale exit bound",
+        "evaluation_factor_error_upper": 2.3338860956963674e-07,
+        "unit_wealth_utility_loss_upper": 4.6679286269291797e-07,
+        "policy_factor_lower": 0.9962167359175625,
+        "relative_ce_loss_bp_upper": 0.004685655699841057,
+        "budget_bp": {
+          "evaluation": 0.004685498668980846,
+          "improvement_gap": 1.570296209698143e-07,
+          "localization": 1.2392407437625516e-12
+        },
+        "evaluation_initial_exact": "7010253705855379/7036874417766400",
+        "whole_space_policy_factor_interval": [
+          0.9962167359175625,
+          0.996217202694782
+        ],
+        "whole_space_policy_ce_interval": [
+          1.0037971611963588,
+          1.0037976315253858
+        ]
+      },
+      "uniform_inner_bounds": {
+        "value_localization_upper": 1.1003654903712567e-10,
+        "exit_probability_upper": 4.708746649379327e-11,
+        "partition_count": 32,
+        "initial_state_exact": "1/2",
+        "a0_exact": "1/50",
+        "lambda0_exact": "976339/3980000",
+        "drift_bound_exact": "17/200",
+        "cplus_exact": "33/100",
+        "continuation_discrepancy_upper": 2.151802177529176,
+        "method": "finite-partition exponential-martingale exit bound",
+        "evaluation_factor_error_upper": 2.3349864605694627e-07,
+        "unit_wealth_utility_loss_upper": 4.67012935667537e-07,
+        "policy_factor_lower": 0.9324997665013537,
+        "relative_ce_loss_bp_upper": 0.005008182869790124,
+        "budget_bp": {
+          "evaluation": 0.005005655076645433,
+          "improvement_gap": 1.6775933041983592e-07,
+          "localization": 2.360033814270471e-06
+        },
+        "scope": "all 0<=t<=T and |z|<=the stated initial-state radius"
+      }
+    }
+  ],
+  "reduction_from_global_lower": 24.829342366338388,
+  "reduction_from_direct_lower": 280.8356838996829,
+  "timing_scope": "recorded runs with different spaces and error targets; no matched-budget speed claim"
+}

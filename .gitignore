@@ -1,0 +1,45 @@
+# Credentials and local environment
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+.venv/
+venv/
+.idea/
+.vscode/
+.DS_Store
+Thumbs.db
+
+# Local Python and test output
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+*.log
+
+# Manuscripts, editorial work, and submission packages are not published here
+manuscript/
+submission/
+arxiv_submission/
+release/
+archive/
+_editorial_archive/
+notes/
+packaging/
+*.tex
+*.bib
+*.bbl
+*.bst
+*.cls
+*.aux
+*.out
+*.pdf
+*.synctex.gz
+
+# Generated presentations and new training runs
+results/tables/
+results/empirical_training/
+figures/*.png
+figures/provenance.json

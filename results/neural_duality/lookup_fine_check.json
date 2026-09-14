@@ -1,0 +1,166 @@
+{
+  "method": "HKW-2006 CRRA/box/incomplete-market adaptation with discrete martingale CV",
+  "checkpoint_sha256": "47628e7e10fb3619a9ac44c01c35270e7074bc56e0b13e679765ebb21b9ad9d7",
+  "source_sha256": "30e8833014c2e4c0985d5cfc1988225c62913d8425cec3fffe69a05682c2c1e2",
+  "continuous_time_certified": false,
+  "policy_retrained": false,
+  "model": "unchanged seed-11 30-asset, one-state, gamma=2, T=3",
+  "outside_policy": "zero exposure, NN greedy upon re-entry",
+  "dual_outside": "myopic constrained price candidate; zero log gradient",
+  "precision": "torch.float64; TF32 disabled",
+  "policy_evaluation": "spatially interpolated NN log gradient, exact clamp",
+  "ci_scope": "asymptotic Monte Carlo sampling only; excludes discretization and interpolation bias",
+  "refinement_coupling": "same RNG seeds, but not nested Brownian increments; marginal SEs reported",
+  "reference_factor_cv": 0.4759720816034942,
+  "args": {
+    "steps": [
+      2048
+    ],
+    "paths": 65536,
+    "seeds": [
+      707
+    ],
+    "space_points": 8193,
+    "device": "cuda",
+    "direct": false,
+    "output": "results/neural_duality/lookup_fine_check.json"
+  },
+  "environment": {
+    "python": "3.12.10",
+    "torch": "2.11.0+cu128",
+    "numpy": "2.5.2",
+    "device": "cuda",
+    "gpu": "NVIDIA GeForce RTX 5070"
+  },
+  "levels": [
+    {
+      "steps": 2048,
+      "table_seconds": 6.74109560000943,
+      "lookup_check": {
+        "sample_count": 16384,
+        "sampled_max_log_gradient_error": 9.050397354104511e-06,
+        "sampled_policy_coordinate_error_upper": 4.3094940146911483e-07,
+        "certified": false
+      },
+      "runs": [
+        {
+          "seed": 707,
+          "steps": 2048,
+          "paths": 65536,
+          "seconds": 2.210025799984578,
+          "outside_time_fraction": 0.0001367628574371338,
+          "paths_with_outside_grid_point_fraction": 0.0094451904296875,
+          "raw": {
+            "policy_factor": 0.472253795373982,
+            "dual_sqrt_density_mean": 0.6856464850553774,
+            "dual_factor_plugin": 0.47011110246879384,
+            "relative_ce_gap_plugin": 0.004537163970257385,
+            "gap_standard_error": 0.003457949330103075,
+            "gap_95_interval": [
+              -0.0022404167167446422,
+              0.011314744657259412
+            ],
+            "gap_one_sided_95_upper": 0.010224984467691843,
+            "estimated_second_order_plugin_bias": -1.7787908798001423e-08,
+            "covariance_of_means": [
+              [
+                2.6772121476116286e-06,
+                3.886211081786678e-06
+              ],
+              [
+                3.886211081786678e-06,
+                5.649580564810464e-06
+              ]
+            ]
+          },
+          "control_variate": {
+            "policy_factor": 0.4740467592892991,
+            "dual_sqrt_density_mean": 0.6882453326355853,
+            "dual_factor_plugin": 0.47368163789466744,
+            "relative_ce_gap_plugin": 0.0007702223197961766,
+            "gap_standard_error": 0.00017984670411569216,
+            "gap_95_interval": [
+              0.00041772277972942,
+              0.0011227218598629332
+            ],
+            "gap_one_sided_95_upper": 0.001066043823356141,
+            "estimated_second_order_plugin_bias": -1.7932354831463785e-08,
+            "covariance_of_means": [
+              [
+                4.251640884127024e-08,
+                4.3082773687810374e-08
+              ],
+              [
+                4.3082773687810374e-08,
+                4.398118613355408e-08
+              ]
+            ]
+          },
+          "martingale_control_mean": 0.9962330481458617,
+          "martingale_control_standard_error": 0.0034773348459054753,
+          "cv_coefficients_fixed_before_sampling": [
+            0.4759720816034942,
+            0.6899072992826603
+          ]
+        }
+      ],
+      "pooled": {
+        "paths": 65536,
+        "raw": {
+          "policy_factor": 0.472253795373982,
+          "dual_sqrt_density_mean": 0.6856464850553774,
+          "dual_factor_plugin": 0.47011110246879384,
+          "relative_ce_gap_plugin": 0.004537163970257385,
+          "gap_standard_error": 0.003457949330103075,
+          "gap_95_interval": [
+            -0.0022404167167446422,
+            0.011314744657259412
+          ],
+          "gap_one_sided_95_upper": 0.010224984467691843,
+          "estimated_second_order_plugin_bias": -1.7787908798001423e-08,
+          "covariance_of_means": [
+            [
+              2.6772121476116286e-06,
+              3.886211081786678e-06
+            ],
+            [
+              3.886211081786678e-06,
+              5.649580564810464e-06
+            ]
+          ]
+        },
+        "control_variate": {
+          "policy_factor": 0.4740467592892991,
+          "dual_sqrt_density_mean": 0.6882453326355853,
+          "dual_factor_plugin": 0.47368163789466744,
+          "relative_ce_gap_plugin": 0.0007702223197961766,
+          "gap_standard_error": 0.00017984670411569216,
+          "gap_95_interval": [
+            0.00041772277972942,
+            0.0011227218598629332
+          ],
+          "gap_one_sided_95_upper": 0.001066043823356141,
+          "estimated_second_order_plugin_bias": -1.7932354831463785e-08,
+          "covariance_of_means": [
+            [
+              4.251640884127024e-08,
+              4.3082773687810374e-08
+            ],
+            [
+              4.3082773687810374e-08,
+              4.398118613355408e-08
+            ]
+          ]
+        },
+        "martingale_control_mean": 0.9962330481458617,
+        "martingale_control_standard_error": 0.0034773348459054753,
+        "cv_coefficients_fixed_before_sampling": [
+          0.4759720816034942,
+          0.6899072992826603
+        ]
+      },
+      "simulation_seconds": 2.210025799984578
+    }
+  ],
+  "complete": true
+}

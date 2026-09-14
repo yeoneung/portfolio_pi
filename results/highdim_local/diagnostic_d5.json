@@ -1,0 +1,20 @@
+{
+  "certified": false,
+  "sample_kind": "independent stationary physical-state Gaussian; not a controlled-state or path-occupancy law",
+  "sample_count": 65536,
+  "seed": 9152026,
+  "state_dimension": 5,
+  "upper_active_fraction_at_tau_one": 0.41500244140625,
+  "lower_active_fraction_at_tau_one": 3.0517578125e-05,
+  "interior_fraction_at_tau_one": 0.584967041015625,
+  "joint_residual_rms_sampled": 0.001231497958678781,
+  "joint_residual_max_abs_sampled": 0.00826636630552104,
+  "stationary_state_std": 0.17859190577218054,
+  "neighbor_state_correlation": 0.10112359550561816,
+  "drift_neighbor_to_self_ratio": 0.2,
+  "premium_neighbor_to_self_ratio": 0.5,
+  "state_covariance_smallest_eigenvalue": 0.02689783833500599,
+  "premium_loading_smallest_singular_value_before_normalization": 0.3320327565260137,
+  "candidate_sha256": "ff41610c4e348f991567d3526998a2209e417ccd4f4f8c3bf26bffeba0c5d7bb",
+  "diagnostic_source_sha256": "7031456d12e6f675fed8eadaa039f046021ae7ed43f0c2512e03d9859293b338"
+}

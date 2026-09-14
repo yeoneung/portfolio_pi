@@ -1,0 +1,216 @@
+{
+  "certified": true,
+  "policy_updates": 0,
+  "policy_sha256": "feaaa88851b46fe50b6989b97f41a9fa76388318743fe03b39ea8e21c29f639d",
+  "baseline": {
+    "market": {
+      "gamma": "2",
+      "risk_free_rate": "0",
+      "radius": "2",
+      "horizon": "1/4",
+      "kappa": "1",
+      "state_variance": "1/4",
+      "sigma12": "1/4",
+      "mu0": [
+        "1/5",
+        "3/20"
+      ],
+      "mu1": [
+        "1/2",
+        "-1/4"
+      ],
+      "cross": [
+        "1/5",
+        "1/10"
+      ],
+      "caps": [
+        "3/10",
+        "1/4"
+      ]
+    },
+    "mode": "greedy",
+    "certificate": {
+      "certified": true,
+      "covered_area_exact": "1",
+      "accepted_cells": 977,
+      "switching_cells": 336,
+      "visited_cells": 1953,
+      "u_lower": 0.9324999999999999,
+      "residual_sup_upper": 0.00024926889333256805,
+      "possible_active_sets": [
+        [
+          -1,
+          0
+        ],
+        [
+          -1,
+          1
+        ],
+        [
+          0,
+          -1
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          1,
+          -1
+        ]
+      ]
+    },
+    "bounds": {
+      "scope": "whole-space CRRA model at t=0, z=0",
+      "mode": "greedy",
+      "candidate_at_initial_state_exact": "438143039799219/439804651110400",
+      "cplus_exact": "33/100",
+      "barrier_factor_upper": 0.26060204072441384,
+      "dirichlet_value_error_upper": 6.495998229158347e-05,
+      "value_localization_upper": 5.907189923523692e-07,
+      "a0_exact": "1/50",
+      "a1_exact": "98/25",
+      "lambda0_exact": "976339/3980000",
+      "lambda1_exact": "8369881/3920000",
+      "initial_state_exact": "0",
+      "weight": "exp(a*z^2)",
+      "whole_space_factor_interval": [
+        0.9961563825889032,
+        0.9962874839914713
+      ],
+      "whole_space_ce_interval": [
+        1.003726350143088,
+        1.0038584478082726
+      ],
+      "whole_space_utility_regret_upper": 0.00013110140256787167,
+      "relative_ce_loss_upper": 0.00013158993229833108,
+      "relative_ce_loss_bp_upper": 1.315899322983311,
+      "deployment": "exact Sigma-QP greedy policy inside D_R; zero risky weights outside D_R"
+    },
+    "candidate_sha256": "feaaa88851b46fe50b6989b97f41a9fa76388318743fe03b39ea8e21c29f639d"
+  },
+  "reevaluations": [
+    {
+      "degree_time": 16,
+      "degree_space": 48,
+      "fitting_seconds_recorded": 5.800484799983678,
+      "certified": true,
+      "certificate": {
+        "certified": true,
+        "covered_area_exact": "1",
+        "visited_cells": 3864,
+        "accepted_cells": 1940,
+        "switching_cells": 656,
+        "frozen_residual_upper": 4.989351587901459e-05,
+        "hamiltonian_gap_upper": 6.944787110200579e-11,
+        "u_lower": 0.9324999999999999,
+        "v_lower": 0.9324999999999999
+      },
+      "policy_sha256": "feaaa88851b46fe50b6989b97f41a9fa76388318743fe03b39ea8e21c29f639d",
+      "evaluation_sha256": "eea3717b0cd77a48e5bffe335d4fefbf0e7461d3e2816c5ffd9e84636fc442ce",
+      "construction_seconds": 34.84357439994346,
+      "verification_seconds": 110.30392979999306,
+      "source_sha256": {
+        "experiments/policy_loss_certificate.py": "7f38c1ec7602b5d338ddf88dbecab52845e08aedca56f4cabd382321d0fae906",
+        "experiments/bernstein_arithmetic.py": "16caa218df273b0f5eb54e35537149c82c42b3ac20c4dd5641de3e0485991772",
+        "experiments/portfolio_welfare.py": "1f9af15c8b9897e1c9596bd89e4ecc53e4016263eef5675e3daf0034479b444c",
+        "experiments/direct_residual_certificate.py": "5214d36d1ccfd01aae4b0a7f4e2d883c317becfe84ae50b49801d212e54a31c2"
+      },
+      "target_residual": 5e-05,
+      "target_gap": 1e-08,
+      "policy_updates": 0,
+      "bounds": {
+        "scope": "same fixed whole-space greedy policy at t=0, z=0; gamma=2",
+        "evaluation_initial_exact": "219070390070447/219902325555200",
+        "phi_upper": 0.26060204072441384,
+        "value_localization_upper": 5.907189923523692e-07,
+        "a0_exact": "1/50",
+        "a1_exact": "98/25",
+        "lambda0_exact": "976339/3980000",
+        "lambda1_exact": "8369881/3920000",
+        "initial_state_exact": "0",
+        "weight": "exp(a*z^2)",
+        "evaluation_factor_error_upper": 1.3593071049339516e-05,
+        "whole_space_policy_factor_interval": [
+          0.9962032023509517,
+          0.9962303884930507
+        ],
+        "whole_space_policy_ce_interval": [
+          1.0037838752466195,
+          1.0038112682634308
+        ],
+        "unit_wealth_utility_loss_upper": 2.7186160196935965e-05,
+        "relative_ce_loss_bp_upper": 0.2728977394649909
+      },
+      "uniform_inner_bounds": {
+        "scope": "all 0<=t<=T and |z|<=inner_radius, same whole-space deployed policy",
+        "inner_radius_exact": "1/2",
+        "localization_upper": 1.5739449063995257e-06,
+        "policy_factor_lower": 0.9324854237030363,
+        "relative_ce_loss_bp_upper": 0.3126334340890926
+      }
+    },
+    {
+      "degree_time": 32,
+      "degree_space": 64,
+      "fitting_seconds_recorded": 45.192520799988415,
+      "certified": true,
+      "certificate": {
+        "certified": true,
+        "covered_area_exact": "1",
+        "visited_cells": 4782,
+        "accepted_cells": 2399,
+        "switching_cells": 809,
+        "frozen_residual_upper": 1.9970375341484412e-05,
+        "hamiltonian_gap_upper": 6.45866284489568e-11,
+        "u_lower": 0.9324999999999999,
+        "v_lower": 0.9324999999999999
+      },
+      "policy_sha256": "feaaa88851b46fe50b6989b97f41a9fa76388318743fe03b39ea8e21c29f639d",
+      "evaluation_sha256": "66ad7e5302a95fc048a129c8eac87e1489bb7ba5439a3ee6cef7b14eb392bb93",
+      "construction_seconds": 68.52700110001024,
+      "verification_seconds": 238.69674310000846,
+      "source_sha256": {
+        "experiments/policy_loss_certificate.py": "7f38c1ec7602b5d338ddf88dbecab52845e08aedca56f4cabd382321d0fae906",
+        "experiments/bernstein_arithmetic.py": "16caa218df273b0f5eb54e35537149c82c42b3ac20c4dd5641de3e0485991772",
+        "experiments/portfolio_welfare.py": "1f9af15c8b9897e1c9596bd89e4ecc53e4016263eef5675e3daf0034479b444c",
+        "experiments/direct_residual_certificate.py": "5214d36d1ccfd01aae4b0a7f4e2d883c317becfe84ae50b49801d212e54a31c2"
+      },
+      "target_residual": 2e-05,
+      "target_gap": 1e-08,
+      "policy_updates": 0,
+      "bounds": {
+        "scope": "same fixed whole-space greedy policy at t=0, z=0; gamma=2",
+        "evaluation_initial_exact": "219070444476497/219902325555200",
+        "phi_upper": 0.26060204072441384,
+        "value_localization_upper": 5.907189923523692e-07,
+        "a0_exact": "1/50",
+        "a1_exact": "98/25",
+        "lambda0_exact": "976339/3980000",
+        "lambda1_exact": "8369881/3920000",
+        "initial_state_exact": "0",
+        "weight": "exp(a*z^2)",
+        "evaluation_factor_error_upper": 5.795039560375719e-06,
+        "whole_space_policy_factor_interval": [
+          0.9962112477925118,
+          0.9962228378716328
+        ],
+        "whole_space_policy_ce_interval": [
+          1.0037914831750259,
+          1.0038031614438039
+        ],
+        "unit_wealth_utility_loss_upper": 1.1590095952158615e-05,
+        "relative_ce_loss_bp_upper": 0.11634174958213853
+      },
+      "uniform_inner_bounds": {
+        "scope": "all 0<=t<=T and |z|<=inner_radius, same whole-space deployed policy",
+        "inner_radius_exact": "1/2",
+        "localization_upper": 1.5739449063995257e-06,
+        "policy_factor_lower": 0.9324932217345253,
+        "relative_ce_loss_bp_upper": 0.14537958522675878
+      }
+    }
+  ],
+  "bound_reduction_factor_lower": 11.310637219309406,
+  "timing_scope": "recorded wall clock; supplied fits may have been run concurrently; no speed claim"
+}

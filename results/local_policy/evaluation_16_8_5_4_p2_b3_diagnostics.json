@@ -1,0 +1,15 @@
+{
+  "certified": false,
+  "policy_sha256": "feaaa88851b46fe50b6989b97f41a9fa76388318743fe03b39ea8e21c29f639d",
+  "fitting_seconds": 4.728121199994348,
+  "sampled_residual_sup_NOT_certificate": 2.4866817061004265e-06,
+  "peak": {
+    "cell": 37,
+    "s": 0.013815039801161721,
+    "x": 0.6900000000000001
+  },
+  "grid_per_cell": [
+    81,
+    101
+  ]
+}

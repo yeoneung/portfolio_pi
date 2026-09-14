@@ -1,0 +1,14 @@
+{
+  "certified": false,
+  "candidate": "evaluation_32_64_6.json",
+  "policy_sha256": "feaaa88851b46fe50b6989b97f41a9fa76388318743fe03b39ea8e21c29f639d",
+  "fitting_seconds": 45.192520799988415,
+  "sampled_frozen_residual_sup_NOT_certificate": 1.5265903224221528e-05,
+  "sampled_gap_sup_NOT_certificate": 6.19442015042937e-11,
+  "sampled_quadratic_gap_sup_NOT_certificate": 6.19442015466986e-11,
+  "sampled_positive_min_NOT_certificate": 0.9325,
+  "grid": [
+    65,
+    2001
+  ]
+}

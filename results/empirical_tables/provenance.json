@@ -1,0 +1,27 @@
+{
+  "gamma": 5,
+  "bootstrap_reps": 30000,
+  "bootstrap_seed": 20260907,
+  "block_length": 12,
+  "hac_lags": 12,
+  "strategy_sources": [
+    {
+      "path": "code/empirical_src_bundle/comparative/ff10_pls_tau3_fixed/selected_by_pipinn/rank_001/run_as_pipinn/comparison_results.csv",
+      "sha256": "8eb7b53d3b028db11f269ea578d8676ccf9a0a4cad7e0ed8029d80066b9572ec"
+    },
+    {
+      "path": "code/empirical_src_bundle/comparative/ff12_pls_tau3_fixed/selected_by_pipinn/rank_001/run_as_pipinn/comparison_results.csv",
+      "sha256": "455dcca9dfea4987ddb5d9f1bb907e46a140c4af71b5e6dfd5594c5b81b142e2"
+    },
+    {
+      "path": "code/empirical_src_bundle/comparative/ff17_pls_tau3_fixed/selected_by_pipinn/rank_001/run_as_pipinn/comparison_results.csv",
+      "sha256": "73136331589ac7051a17458b1ee8ee1fb816a50fb4bc4d86bbd847125a55eec1"
+    },
+    {
+      "path": "code/empirical_src_bundle/comparative/ff25_pls_tau3_fixed/selected_by_pipinn/rank_001/run_as_pipinn/comparison_results.csv",
+      "sha256": "feb3b36f9b59943e2ef97e59845d432a792b9ffe058eeba177e01aa0a1a4e4cb"
+    }
+  ],
+  "risk_free_source_sha256": "42492fc7fe23de2c44058e77414e1d35c451bf8d289dfff75c5b80c2804324e2",
+  "limits": "Conditional on fixed specifications; costs are ex-post; no solver-accuracy-matched superiority claim."
+}

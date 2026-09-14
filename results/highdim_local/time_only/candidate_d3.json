@@ -1,0 +1,173 @@
+{
+  "model": {
+    "kappa": "1",
+    "drift_neighbor": "1/5",
+    "variance": "1/16",
+    "cross": "1/8",
+    "lambda_constant": "1/5",
+    "lambda_self": "1/2",
+    "lambda_neighbor": "1/4",
+    "cap": "11/100",
+    "risk_free_rate": "3/100",
+    "horizon": "1",
+    "radius": "3/2",
+    "gamma": "2"
+  },
+  "dimension": 3,
+  "assets": 3,
+  "time_terms": 5,
+  "candidate_type": "additive log-quadratic, polynomial in time; not a dense neural network",
+  "normalization": "lambda and box exposure caps divided by exact sqrt(d)",
+  "state_interaction": "directed nearest-neighbor cycle in drift and risky premia",
+  "base": [
+    "-750309969/68719476736",
+    "-923851/4294967296",
+    "329587/68719476736",
+    "-1395921/68719476736",
+    "828485/34359738368",
+    "-3051393131/68719476736",
+    "514275347/68719476736",
+    "-17382043/8589934592",
+    "49875249/68719476736",
+    "7654851/17179869184",
+    "-713926109/34359738368",
+    "9841423/1073741824",
+    "522461/2147483648",
+    "-14256487/68719476736",
+    "-39095115/68719476736"
+  ],
+  "lower": {
+    "coeff": [
+      "-7185478629/68719476736",
+      "-400700255/68719476736",
+      "-99969407/17179869184",
+      "68161091/68719476736",
+      "154246439/68719476736",
+      "-3051393131/68719476736",
+      "514275347/68719476736",
+      "-17382043/8589934592",
+      "49875249/68719476736",
+      "7654851/17179869184",
+      "-713926109/34359738368",
+      "9841423/1073741824",
+      "522461/2147483648",
+      "-14256487/68719476736",
+      "-39095115/68719476736"
+    ],
+    "potential": [
+      "-306430103/8589934592",
+      "738861467/34359738368",
+      "-444962673/68719476736",
+      "-1480633713/68719476736",
+      "-1690128657/68719476736",
+      "-276096509/34359738368",
+      "271502055/17179869184",
+      "-243345723/68719476736",
+      "-1164327525/68719476736",
+      "-11245131/2147483648"
+    ]
+  },
+  "upper": {
+    "coeff": [
+      "798497173/17179869184",
+      "40768233/17179869184",
+      "-35981677/8589934592",
+      "-1094537/4294967296",
+      "116100709/68719476736",
+      "-3051393131/68719476736",
+      "514275347/68719476736",
+      "-17382043/8589934592",
+      "49875249/68719476736",
+      "7654851/17179869184",
+      "-713926109/34359738368",
+      "9841423/1073741824",
+      "522461/2147483648",
+      "-14256487/68719476736",
+      "-39095115/68719476736"
+    ],
+    "potential": [
+      "-1610401407/68719476736",
+      "-140102401/34359738368",
+      "110806539/68719476736",
+      "217304859/68719476736",
+      "23682263/17179869184",
+      "-260645475/34359738368",
+      "235023023/68719476736",
+      "-163627675/68719476736",
+      "-360628831/68719476736",
+      "-376263939/68719476736"
+    ]
+  },
+  "prescribed_trace": "trace of the frozen positive generating candidate on the cube",
+  "outside_policy": "zero outside the cube; same coupled greedy policy upon re-entry",
+  "training": {
+    "seconds": 2.5564334000227973,
+    "final_sampled_loss": 6.88741218499223e-06,
+    "epochs": 600,
+    "seed": 1103,
+    "device": "cuda",
+    "gpu": "NVIDIA GeForce RTX 5070"
+  },
+  "barrier_fit_seconds": 4.770750500028953,
+  "barrier_fit_diagnostics": [
+    {
+      "side": "lower",
+      "iteration": 0,
+      "endpoint": -0.012498520107141163,
+      "sampled_residual_min": -0.43226693567650054,
+      "sampled_residual_max": -9.999999917974928e-09,
+      "lp_objective": 0.012498520107141163
+    },
+    {
+      "side": "lower",
+      "iteration": 1,
+      "endpoint": -0.012497455483597975,
+      "sampled_residual_min": -0.43184624105134733,
+      "sampled_residual_max": -9.999999981292335e-09,
+      "lp_objective": 0.012497455483597975
+    },
+    {
+      "side": "lower",
+      "iteration": 2,
+      "endpoint": -0.012497455483424017,
+      "sampled_residual_min": -0.43184624090752793,
+      "sampled_residual_max": -9.999999352455075e-09,
+      "lp_objective": 0.012497455483424019
+    },
+    {
+      "side": "upper",
+      "iteration": 0,
+      "endpoint": -0.009653941952596485,
+      "sampled_residual_min": 5.975986214272477e-05,
+      "sampled_residual_max": 0.19744054314225978,
+      "lp_objective": -0.009653941952596484
+    },
+    {
+      "side": "upper",
+      "iteration": 1,
+      "endpoint": -0.009653644795216134,
+      "sampled_residual_min": 6.667666661027555e-05,
+      "sampled_residual_max": 0.19742541483804177,
+      "lp_objective": -0.009653644795216135
+    },
+    {
+      "side": "upper",
+      "iteration": 2,
+      "endpoint": -0.009653644795214763,
+      "sampled_residual_min": 6.667666666146377e-05,
+      "sampled_residual_max": 0.19742541484156134,
+      "lp_objective": -0.009653644795214765
+    }
+  ],
+  "fit_source_sha256": "e97da5120a948ea5bd2dbf594b142113010751feb5fcbae2d10c6a165794de0e",
+  "certified": false,
+  "baseline": "same policy and spatial log-evaluation coefficients; time-only evaluation corrections plus optimized telescoping potentials",
+  "baseline_fit_seconds": 24.016191500006244,
+  "baseline_collocation_shape": [
+    129,
+    81,
+    81
+  ],
+  "parent_candidate_sha256": "fbf2f92c1e0dafc62c28451879f5acca1c1379cb8b3bb83c3c355b3e8ad93a44",
+  "diagnostic_source_sha256": "7031456d12e6f675fed8eadaa039f046021ae7ed43f0c2512e03d9859293b338"
+}

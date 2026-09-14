@@ -1,0 +1,57 @@
+{
+  "certified": true,
+  "certificate": {
+    "certified": true,
+    "covered_area_exact": "1",
+    "visited_cells": 4782,
+    "accepted_cells": 2399,
+    "switching_cells": 809,
+    "frozen_residual_upper": 1.9970375341484412e-05,
+    "hamiltonian_gap_upper": 6.45866284489568e-11,
+    "u_lower": 0.9324999999999999,
+    "v_lower": 0.9324999999999999
+  },
+  "policy_sha256": "feaaa88851b46fe50b6989b97f41a9fa76388318743fe03b39ea8e21c29f639d",
+  "evaluation_sha256": "66ad7e5302a95fc048a129c8eac87e1489bb7ba5439a3ee6cef7b14eb392bb93",
+  "construction_seconds": 68.52700110001024,
+  "verification_seconds": 238.69674310000846,
+  "source_sha256": {
+    "experiments/policy_loss_certificate.py": "7f38c1ec7602b5d338ddf88dbecab52845e08aedca56f4cabd382321d0fae906",
+    "experiments/bernstein_arithmetic.py": "16caa218df273b0f5eb54e35537149c82c42b3ac20c4dd5641de3e0485991772",
+    "experiments/portfolio_welfare.py": "1f9af15c8b9897e1c9596bd89e4ecc53e4016263eef5675e3daf0034479b444c",
+    "experiments/direct_residual_certificate.py": "5214d36d1ccfd01aae4b0a7f4e2d883c317becfe84ae50b49801d212e54a31c2"
+  },
+  "target_residual": 2e-05,
+  "target_gap": 1e-08,
+  "policy_updates": 0,
+  "bounds": {
+    "scope": "same fixed whole-space greedy policy at t=0, z=0; gamma=2",
+    "evaluation_initial_exact": "219070444476497/219902325555200",
+    "phi_upper": 0.26060204072441384,
+    "value_localization_upper": 5.907189923523692e-07,
+    "a0_exact": "1/50",
+    "a1_exact": "98/25",
+    "lambda0_exact": "976339/3980000",
+    "lambda1_exact": "8369881/3920000",
+    "initial_state_exact": "0",
+    "weight": "exp(a*z^2)",
+    "evaluation_factor_error_upper": 5.795039560375719e-06,
+    "whole_space_policy_factor_interval": [
+      0.9962112477925118,
+      0.9962228378716328
+    ],
+    "whole_space_policy_ce_interval": [
+      1.0037914831750259,
+      1.0038031614438039
+    ],
+    "unit_wealth_utility_loss_upper": 1.1590095952158615e-05,
+    "relative_ce_loss_bp_upper": 0.11634174958213853
+  },
+  "uniform_inner_bounds": {
+    "scope": "all 0<=t<=T and |z|<=inner_radius, same whole-space deployed policy",
+    "inner_radius_exact": "1/2",
+    "localization_upper": 1.5739449063995257e-06,
+    "policy_factor_lower": 0.9324932217345253,
+    "relative_ce_loss_bp_upper": 0.14537958522675878
+  }
+}

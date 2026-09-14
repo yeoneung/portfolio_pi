@@ -1,0 +1,636 @@
+{
+  "L1": {
+    "L": 1,
+    "p": 4,
+    "config": {
+      "hidden": 128,
+      "depth": 3,
+      "batch": 4096,
+      "inner_epochs": 2500,
+      "outer_iters": 8,
+      "lr": 0.003
+    },
+    "domain": {
+      "center": [
+        0.27218933336685136
+      ],
+      "eta": [
+        0.34462029899878405
+      ],
+      "R_base": 2.0,
+      "R_large": 3.0,
+      "interior_r": 1.0
+    },
+    "history_R": [
+      {
+        "outer": 1,
+        "train_loss": 0.0002758890623226762,
+        "heldout_value_rel_l2": 0.003771223739579797,
+        "heldout_policy_rel_l2": 0.004333124316986279
+      },
+      {
+        "outer": 2,
+        "train_loss": 0.00011785516107920557,
+        "heldout_value_rel_l2": 0.0025535632071271275,
+        "heldout_policy_rel_l2": 0.004033281469086668
+      },
+      {
+        "outer": 3,
+        "train_loss": 0.00023370233247987926,
+        "heldout_value_rel_l2": 0.002603683746128488,
+        "heldout_policy_rel_l2": 0.003957051677072322
+      },
+      {
+        "outer": 4,
+        "train_loss": 7.965647819219157e-05,
+        "heldout_value_rel_l2": 0.002129488469618596,
+        "heldout_policy_rel_l2": 0.0037906563079315204
+      },
+      {
+        "outer": 5,
+        "train_loss": 4.169593739788979e-05,
+        "heldout_value_rel_l2": 0.0020131867420229758,
+        "heldout_policy_rel_l2": 0.003744019031742397
+      },
+      {
+        "outer": 6,
+        "train_loss": 0.00013592826144304127,
+        "heldout_value_rel_l2": 0.0019526268912885112,
+        "heldout_policy_rel_l2": 0.0038649871899718385
+      },
+      {
+        "outer": 7,
+        "train_loss": 4.444179648999125e-05,
+        "heldout_value_rel_l2": 0.0017210996548345204,
+        "heldout_policy_rel_l2": 0.003687989824114486
+      },
+      {
+        "outer": 8,
+        "train_loss": 3.6935958632966504e-05,
+        "heldout_value_rel_l2": 0.0023689408104129784,
+        "heldout_policy_rel_l2": 0.003655858629728004
+      }
+    ],
+    "history_Rprime": [
+      {
+        "outer": 1,
+        "train_loss": 0.0045031774789094925,
+        "heldout_value_rel_l2": 0.0047410477870370995,
+        "heldout_policy_rel_l2": 0.0052492473367415585
+      },
+      {
+        "outer": 2,
+        "train_loss": 0.00162632972933352,
+        "heldout_value_rel_l2": 0.003735910815558501,
+        "heldout_policy_rel_l2": 0.0019207120133586878
+      },
+      {
+        "outer": 3,
+        "train_loss": 0.0006056900601834059,
+        "heldout_value_rel_l2": 0.0014302127647774611,
+        "heldout_policy_rel_l2": 0.0011783995209545108
+      },
+      {
+        "outer": 4,
+        "train_loss": 0.0007994463667273521,
+        "heldout_value_rel_l2": 0.0011980676151485724,
+        "heldout_policy_rel_l2": 0.0007069715413800274
+      },
+      {
+        "outer": 5,
+        "train_loss": 0.0013184528797864914,
+        "heldout_value_rel_l2": 0.0008387713356208793,
+        "heldout_policy_rel_l2": 0.000916392262714971
+      },
+      {
+        "outer": 6,
+        "train_loss": 0.000254728744039312,
+        "heldout_value_rel_l2": 0.001448560551549627,
+        "heldout_policy_rel_l2": 0.0008001152847453407
+      },
+      {
+        "outer": 7,
+        "train_loss": 0.0002545854658819735,
+        "heldout_value_rel_l2": 0.0008661560638786576,
+        "heldout_policy_rel_l2": 0.0010378695788153883
+      },
+      {
+        "outer": 8,
+        "train_loss": 0.00029291113605722785,
+        "heldout_value_rel_l2": 0.0008856356417533052,
+        "heldout_policy_rel_l2": 0.001212933777133463
+      }
+    ],
+    "validation": {
+      "target_measure": "normalized uniform measure on Q_R",
+      "Q_R_Lebesgue_volume": 4.13544358798541,
+      "M_per_outer_iterate": 50000,
+      "p": 4,
+      "familywise_delta": 0.05,
+      "number_of_validated_outer_iterates": 8,
+      "alpha_uniform": 0.5,
+      "inner_ellipsoid_scale": 0.5,
+      "mixture": "0.5 Unif((0,T)xD_R) + 0.5 Unif((0,T)xD_{0.5R})",
+      "importance_weights_are_exact": true,
+      "importance_weight_formula": "1 / [alpha + (1-alpha)*inner_scale^(-L)*1{z in D_inner}]",
+      "w_max": 2.0,
+      "inner_volume_ratio": 0.5,
+      "empirical_envelope_is_not_verified": true,
+      "iterations": [
+        {
+          "outer": 1,
+          "evaluated_policy_source": "myopic",
+          "residual_operator": "frozen_policy_evaluation",
+          "M": 50000,
+          "sample_weight_mean": 1.00008,
+          "sample_weight_max": 2.0,
+          "empirical_residual_envelope_S_R": 1.4431560337543488,
+          "empirical_variable_envelope_w_abs_r_p": 8.675273063025072,
+          "envelope_scan_points": 200000,
+          "normalized_Lp_point_estimate": 0.10398241372681499,
+          "normalized_Lp_standalone_95_bound_if_envelope_holds": 0.4670900900670563,
+          "normalized_Lp_simultaneous_95_bound_if_envelopes_hold": 0.4988354831225903,
+          "Lebesgue_Lp_point_estimate": 0.14828267759979652,
+          "Lebesgue_Lp_standalone_95_bound_if_envelope_holds": 0.666087338744014,
+          "Lebesgue_Lp_simultaneous_95_bound_if_envelopes_hold": 0.711357415817813,
+          "max_abs_residual_on_validation": 0.9849074482917786
+        },
+        {
+          "outer": 2,
+          "evaluated_policy_source": "greedy_from_outer_1",
+          "residual_operator": "frozen_policy_evaluation",
+          "M": 50000,
+          "sample_weight_mean": 1.0034933333333331,
+          "sample_weight_max": 2.0,
+          "empirical_residual_envelope_S_R": 1.3194462060928345,
+          "empirical_variable_envelope_w_abs_r_p": 6.06173226455766,
+          "envelope_scan_points": 200000,
+          "normalized_Lp_point_estimate": 0.08355640933475697,
+          "normalized_Lp_standalone_95_bound_if_envelope_holds": 0.4269445341534473,
+          "normalized_Lp_simultaneous_95_bound_if_envelopes_hold": 0.45598760321430065,
+          "Lebesgue_Lp_point_estimate": 0.11915445759254645,
+          "Lebesgue_Lp_standalone_95_bound_if_envelope_holds": 0.6088383260384438,
+          "Lebesgue_Lp_simultaneous_95_bound_if_envelopes_hold": 0.650254791493588,
+          "max_abs_residual_on_validation": 0.8330731391906738
+        },
+        {
+          "outer": 3,
+          "evaluated_policy_source": "greedy_from_outer_2",
+          "residual_operator": "frozen_policy_evaluation",
+          "M": 50000,
+          "sample_weight_mean": 0.9989333333333331,
+          "sample_weight_max": 2.0,
+          "empirical_residual_envelope_S_R": 1.3333163559436798,
+          "empirical_variable_envelope_w_abs_r_p": 6.320665718858672,
+          "envelope_scan_points": 200000,
+          "normalized_Lp_point_estimate": 0.04163185910307778,
+          "normalized_Lp_standalone_95_bound_if_envelope_holds": 0.43128366341296426,
+          "normalized_Lp_simultaneous_95_bound_if_envelopes_hold": 0.46065873831196247,
+          "Lebesgue_Lp_point_estimate": 0.05936853473588746,
+          "Lebesgue_Lp_standalone_95_bound_if_envelope_holds": 0.6150260810827074,
+          "Lebesgue_Lp_simultaneous_95_bound_if_envelopes_hold": 0.6569159988543963,
+          "max_abs_residual_on_validation": 0.4189504086971283
+        },
+        {
+          "outer": 4,
+          "evaluated_policy_source": "greedy_from_outer_3",
+          "residual_operator": "frozen_policy_evaluation",
+          "M": 50000,
+          "sample_weight_mean": 0.9986399999999999,
+          "sample_weight_max": 2.0,
+          "empirical_residual_envelope_S_R": 1.427479326725006,
+          "empirical_variable_envelope_w_abs_r_p": 8.304419987850252,
+          "envelope_scan_points": 200000,
+          "normalized_Lp_point_estimate": 0.03752155643071486,
+          "normalized_Lp_standalone_95_bound_if_envelope_holds": 0.461737275004847,
+          "normalized_Lp_simultaneous_95_bound_if_envelopes_hold": 0.4931878045035435,
+          "Lebesgue_Lp_point_estimate": 0.05350709466963904,
+          "Lebesgue_Lp_standalone_95_bound_if_envelope_holds": 0.6584540311329191,
+          "Lebesgue_Lp_simultaneous_95_bound_if_envelopes_hold": 0.7033036221248183,
+          "max_abs_residual_on_validation": 0.3579740822315216
+        },
+        {
+          "outer": 5,
+          "evaluated_policy_source": "greedy_from_outer_4",
+          "residual_operator": "frozen_policy_evaluation",
+          "M": 50000,
+          "sample_weight_mean": 1.0028266666666665,
+          "sample_weight_max": 2.0,
+          "empirical_residual_envelope_S_R": 1.4032346606254578,
+          "empirical_variable_envelope_w_abs_r_p": 7.7544537397763005,
+          "envelope_scan_points": 200000,
+          "normalized_Lp_point_estimate": 0.042164012379834234,
+          "normalized_Lp_standalone_95_bound_if_envelope_holds": 0.45389851513726365,
+          "normalized_Lp_simultaneous_95_bound_if_envelopes_hold": 0.484814252909023,
+          "Lebesgue_Lp_point_estimate": 0.06012740452879556,
+          "Lebesgue_Lp_standalone_95_bound_if_envelope_holds": 0.6472756764422803,
+          "Lebesgue_Lp_simultaneous_95_bound_if_envelopes_hold": 0.6913626351160186,
+          "max_abs_residual_on_validation": 0.4744721055030823
+        },
+        {
+          "outer": 6,
+          "evaluated_policy_source": "greedy_from_outer_5",
+          "residual_operator": "frozen_policy_evaluation",
+          "M": 50000,
+          "sample_weight_mean": 1.0056266666666667,
+          "sample_weight_max": 2.0,
+          "empirical_residual_envelope_S_R": 1.4452534317970276,
+          "empirical_variable_envelope_w_abs_r_p": 8.725815638233634,
+          "envelope_scan_points": 200000,
+          "normalized_Lp_point_estimate": 0.034242429166632886,
+          "normalized_Lp_standalone_95_bound_if_envelope_holds": 0.4674848149343643,
+          "normalized_Lp_simultaneous_95_bound_if_envelopes_hold": 0.49932725798492267,
+          "Lebesgue_Lp_point_estimate": 0.04883094075590103,
+          "Lebesgue_Lp_standalone_95_bound_if_envelope_holds": 0.6666502306614245,
+          "Lebesgue_Lp_simultaneous_95_bound_if_envelopes_hold": 0.7120587045333692,
+          "max_abs_residual_on_validation": 0.40694859623908997
+        },
+        {
+          "outer": 7,
+          "evaluated_policy_source": "greedy_from_outer_6",
+          "residual_operator": "frozen_policy_evaluation",
+          "M": 50000,
+          "sample_weight_mean": 1.0017599999999998,
+          "sample_weight_max": 2.0,
+          "empirical_residual_envelope_S_R": 1.529835820198059,
+          "empirical_variable_envelope_w_abs_r_p": 10.954922196313586,
+          "envelope_scan_points": 200000,
+          "normalized_Lp_point_estimate": 0.04112933891283335,
+          "normalized_Lp_standalone_95_bound_if_envelope_holds": 0.49484636076796984,
+          "normalized_Lp_simultaneous_95_bound_if_envelopes_hold": 0.5285519390382017,
+          "Lebesgue_Lp_point_estimate": 0.05865192279463006,
+          "Lebesgue_Lp_standalone_95_bound_if_envelope_holds": 0.7056687832614427,
+          "Lebesgue_Lp_simultaneous_95_bound_if_envelopes_hold": 0.7537341552491544,
+          "max_abs_residual_on_validation": 0.4402509927749634
+        },
+        {
+          "outer": 8,
+          "evaluated_policy_source": "greedy_from_outer_7",
+          "residual_operator": "frozen_policy_evaluation",
+          "M": 50000,
+          "sample_weight_mean": 1.0043733333333331,
+          "sample_weight_max": 2.0,
+          "empirical_residual_envelope_S_R": 1.3794093132019043,
+          "empirical_variable_envelope_w_abs_r_p": 7.241067751837038,
+          "envelope_scan_points": 200000,
+          "normalized_Lp_point_estimate": 0.06009844396365928,
+          "normalized_Lp_standalone_95_bound_if_envelope_holds": 0.44622023342862044,
+          "normalized_Lp_simultaneous_95_bound_if_envelopes_hold": 0.4766059623900701,
+          "Lebesgue_Lp_point_estimate": 0.08570255172115333,
+          "Lebesgue_Lp_standalone_95_bound_if_envelope_holds": 0.6363261694024226,
+          "Lebesgue_Lp_simultaneous_95_bound_if_envelopes_hold": 0.6796573163698594,
+          "max_abs_residual_on_validation": 0.7032862901687622
+        }
+      ],
+      "weighted_Lp_point_estimate": 0.06009844396365928,
+      "weighted_Lp_high_prob_bound": 0.44622023342862044,
+      "weighted_Lp_simultaneous_high_prob_bound": 0.4766059623900701,
+      "envelope_B_R": 1.3794093132019043,
+      "max_abs_residual_on_validation": 0.7032862901687622,
+      "final_bellman_Lp_point_estimate_separate_diagnostic": 0.060098442034929186
+    },
+    "greedy_gap": {
+      "constraint_set": "unbounded (A = R^N); greedy map analytic",
+      "max_foc_residual": 0.0
+    },
+    "radius_sensitivity": {
+      "sup_policy_diff_interior": 0.011624271050095558,
+      "mean_policy_diff_interior": 0.0011776258470490575,
+      "sup_reference_policy_norm": 0.6991320270095466,
+      "relative_sup": 0.01662671798889973
+    },
+    "newton_saturation": {
+      "heldout_value_errors": [
+        0.003771223739579797,
+        0.0025535632071271275,
+        0.002603683746128488,
+        0.002129488469618596,
+        0.0020131867420229758,
+        0.0019526268912885112,
+        0.0017210996548345204,
+        0.0023689408104129784
+      ],
+      "evaluation_floor": 0.0017210996548345204,
+      "saturation_outer_index": 1
+    }
+  },
+  "L3": {
+    "L": 3,
+    "p": 6,
+    "config": {
+      "hidden": 128,
+      "depth": 3,
+      "batch": 4096,
+      "inner_epochs": 3000,
+      "outer_iters": 8,
+      "lr": 0.003
+    },
+    "domain": {
+      "center": [
+        0.3720237573305189,
+        0.32826349615763295,
+        0.3096726417626628
+      ],
+      "eta": [
+        0.34462029899878405,
+        0.41004567779667456,
+        0.4444654621439592
+      ],
+      "R_base": 2.0,
+      "R_large": 3.0,
+      "interior_r": 1.0
+    },
+    "history_R": [
+      {
+        "outer": 1,
+        "train_loss": 0.00022727553732693195,
+        "heldout_value_rel_l2": 0.039973014504258116,
+        "heldout_policy_rel_l2": 0.03115815964769204
+      },
+      {
+        "outer": 2,
+        "train_loss": 5.9605932619888335e-05,
+        "heldout_value_rel_l2": 0.03782169634174652,
+        "heldout_policy_rel_l2": 0.029794003719016658
+      },
+      {
+        "outer": 3,
+        "train_loss": 3.086745709879324e-05,
+        "heldout_value_rel_l2": 0.0377009348842873,
+        "heldout_policy_rel_l2": 0.029961204895714896
+      },
+      {
+        "outer": 4,
+        "train_loss": 1.7339629266643897e-05,
+        "heldout_value_rel_l2": 0.03766363147423073,
+        "heldout_policy_rel_l2": 0.03000744881088445
+      },
+      {
+        "outer": 5,
+        "train_loss": 0.00015349540626630187,
+        "heldout_value_rel_l2": 0.037349144851978246,
+        "heldout_policy_rel_l2": 0.029944520911095625
+      },
+      {
+        "outer": 6,
+        "train_loss": 6.700710218865424e-05,
+        "heldout_value_rel_l2": 0.03766991593105984,
+        "heldout_policy_rel_l2": 0.03006016530500227
+      },
+      {
+        "outer": 7,
+        "train_loss": 6.770084291929379e-05,
+        "heldout_value_rel_l2": 0.03768013474038532,
+        "heldout_policy_rel_l2": 0.03015525925167694
+      },
+      {
+        "outer": 8,
+        "train_loss": 4.970841473550536e-06,
+        "heldout_value_rel_l2": 0.03758003045576258,
+        "heldout_policy_rel_l2": 0.030094401250068233
+      }
+    ],
+    "history_Rprime": [
+      {
+        "outer": 1,
+        "train_loss": 0.0009118001325987279,
+        "heldout_value_rel_l2": 0.02291191334978119,
+        "heldout_policy_rel_l2": 0.01115689481344393
+      },
+      {
+        "outer": 2,
+        "train_loss": 0.0005875935312360525,
+        "heldout_value_rel_l2": 0.012211966462635634,
+        "heldout_policy_rel_l2": 0.005939239776457535
+      },
+      {
+        "outer": 3,
+        "train_loss": 0.0003558199678082019,
+        "heldout_value_rel_l2": 0.004396989138770059,
+        "heldout_policy_rel_l2": 0.0030388236146841182
+      },
+      {
+        "outer": 4,
+        "train_loss": 0.00034387552295811474,
+        "heldout_value_rel_l2": 0.0046295166407125336,
+        "heldout_policy_rel_l2": 0.0025270827893823606
+      },
+      {
+        "outer": 5,
+        "train_loss": 0.00029598036780953407,
+        "heldout_value_rel_l2": 0.0015109524438405423,
+        "heldout_policy_rel_l2": 0.00210762847258772
+      },
+      {
+        "outer": 6,
+        "train_loss": 0.00013774383114650846,
+        "heldout_value_rel_l2": 0.002404877274960613,
+        "heldout_policy_rel_l2": 0.0017042382094550933
+      },
+      {
+        "outer": 7,
+        "train_loss": 7.48915335861966e-05,
+        "heldout_value_rel_l2": 0.0013622754428844136,
+        "heldout_policy_rel_l2": 0.001545792626334561
+      },
+      {
+        "outer": 8,
+        "train_loss": 9.551612311042845e-05,
+        "heldout_value_rel_l2": 0.0010793241933002306,
+        "heldout_policy_rel_l2": 0.0013092337667550756
+      }
+    ],
+    "validation": {
+      "target_measure": "normalized uniform measure on Q_R",
+      "Q_R_Lebesgue_volume": 6.314092842526856,
+      "M_per_outer_iterate": 50000,
+      "p": 6,
+      "familywise_delta": 0.05,
+      "number_of_validated_outer_iterates": 8,
+      "alpha_uniform": 0.5,
+      "inner_ellipsoid_scale": 0.5,
+      "mixture": "0.5 Unif((0,T)xD_R) + 0.5 Unif((0,T)xD_{0.5R})",
+      "importance_weights_are_exact": true,
+      "importance_weight_formula": "1 / [alpha + (1-alpha)*inner_scale^(-L)*1{z in D_inner}]",
+      "w_max": 2.0,
+      "inner_volume_ratio": 0.125,
+      "empirical_envelope_is_not_verified": true,
+      "iterations": [
+        {
+          "outer": 1,
+          "evaluated_policy_source": "myopic",
+          "residual_operator": "frozen_policy_evaluation",
+          "M": 50000,
+          "sample_weight_mean": 1.0036622222222222,
+          "sample_weight_max": 2.0,
+          "empirical_residual_envelope_S_R": 0.9593540132045746,
+          "empirical_variable_envelope_w_abs_r_p": 1.559205562847468,
+          "envelope_scan_points": 200000,
+          "normalized_Lp_point_estimate": 0.1112376423556841,
+          "normalized_Lp_standalone_95_bound_if_envelope_holds": 0.45207297574235716,
+          "normalized_Lp_simultaneous_95_bound_if_envelopes_hold": 0.4723716416186361,
+          "Lebesgue_Lp_point_estimate": 0.15122964620414017,
+          "Lebesgue_Lp_standalone_95_bound_if_envelope_holds": 0.6146016288386038,
+          "Lebesgue_Lp_simultaneous_95_bound_if_envelopes_hold": 0.6421980430908055,
+          "max_abs_residual_on_validation": 0.5297596454620361
+        },
+        {
+          "outer": 2,
+          "evaluated_policy_source": "greedy_from_outer_1",
+          "residual_operator": "frozen_policy_evaluation",
+          "M": 50000,
+          "sample_weight_mean": 1.0026666666666666,
+          "sample_weight_max": 2.0,
+          "empirical_residual_envelope_S_R": 0.9847471117973328,
+          "empirical_variable_envelope_w_abs_r_p": 1.8238045296881287,
+          "envelope_scan_points": 200000,
+          "normalized_Lp_point_estimate": 0.1058115361477503,
+          "normalized_Lp_standalone_95_bound_if_envelope_holds": 0.46403258036377554,
+          "normalized_Lp_simultaneous_95_bound_if_envelopes_hold": 0.48486977190930847,
+          "Lebesgue_Lp_point_estimate": 0.14385275377173787,
+          "Lebesgue_Lp_standalone_95_bound_if_envelope_holds": 0.6308609340282565,
+          "Lebesgue_Lp_simultaneous_95_bound_if_envelopes_hold": 0.6591894839560123,
+          "max_abs_residual_on_validation": 0.5630394220352173
+        },
+        {
+          "outer": 3,
+          "evaluated_policy_source": "greedy_from_outer_2",
+          "residual_operator": "frozen_policy_evaluation",
+          "M": 50000,
+          "sample_weight_mean": 1.0052977777777776,
+          "sample_weight_max": 2.0,
+          "empirical_residual_envelope_S_R": 1.004893273115158,
+          "empirical_variable_envelope_w_abs_r_p": 2.059442304873699,
+          "envelope_scan_points": 200000,
+          "normalized_Lp_point_estimate": 0.06544498846606522,
+          "normalized_Lp_standalone_95_bound_if_envelope_holds": 0.47351531059862934,
+          "normalized_Lp_simultaneous_95_bound_if_envelopes_hold": 0.4947808731137311,
+          "Lebesgue_Lp_point_estimate": 0.08897368050925201,
+          "Lebesgue_Lp_standalone_95_bound_if_envelope_holds": 0.6437528823660393,
+          "Lebesgue_Lp_simultaneous_95_bound_if_envelopes_hold": 0.6726638106038718,
+          "max_abs_residual_on_validation": 0.3184797465801239
+        },
+        {
+          "outer": 4,
+          "evaluated_policy_source": "greedy_from_outer_3",
+          "residual_operator": "frozen_policy_evaluation",
+          "M": 50000,
+          "sample_weight_mean": 1.0026666666666666,
+          "sample_weight_max": 2.0,
+          "empirical_residual_envelope_S_R": 1.0718699097633362,
+          "empirical_variable_envelope_w_abs_r_p": 3.0330702650079844,
+          "envelope_scan_points": 200000,
+          "normalized_Lp_point_estimate": 0.08205122226341806,
+          "normalized_Lp_standalone_95_bound_if_envelope_holds": 0.5050763022030132,
+          "normalized_Lp_simultaneous_95_bound_if_envelopes_hold": 0.5277590356178286,
+          "Lebesgue_Lp_point_estimate": 0.11155016459120341,
+          "Lebesgue_Lp_standalone_95_bound_if_envelope_holds": 0.6866606381679935,
+          "Lebesgue_Lp_simultaneous_95_bound_if_envelopes_hold": 0.7174982366339598,
+          "max_abs_residual_on_validation": 0.40860429406166077
+        },
+        {
+          "outer": 5,
+          "evaluated_policy_source": "greedy_from_outer_4",
+          "residual_operator": "frozen_policy_evaluation",
+          "M": 50000,
+          "sample_weight_mean": 0.9932088888888888,
+          "sample_weight_max": 2.0,
+          "empirical_residual_envelope_S_R": 0.9139497578144073,
+          "empirical_variable_envelope_w_abs_r_p": 1.1656386204843947,
+          "envelope_scan_points": 200000,
+          "normalized_Lp_point_estimate": 0.10847478002485732,
+          "normalized_Lp_standalone_95_bound_if_envelope_holds": 0.430679684224959,
+          "normalized_Lp_simultaneous_95_bound_if_envelopes_hold": 0.4500171838942345,
+          "Lebesgue_Lp_point_estimate": 0.1474734834164961,
+          "Lebesgue_Lp_standalone_95_bound_if_envelope_holds": 0.5855170506436324,
+          "Lebesgue_Lp_simultaneous_95_bound_if_envelopes_hold": 0.6118067415389715,
+          "max_abs_residual_on_validation": 0.5319665670394897
+        },
+        {
+          "outer": 6,
+          "evaluated_policy_source": "greedy_from_outer_5",
+          "residual_operator": "frozen_policy_evaluation",
+          "M": 50000,
+          "sample_weight_mean": 0.9995733333333331,
+          "sample_weight_max": 2.0,
+          "empirical_residual_envelope_S_R": 0.8574038743972778,
+          "empirical_variable_envelope_w_abs_r_p": 0.7945891774929094,
+          "envelope_scan_points": 200000,
+          "normalized_Lp_point_estimate": 0.14327483794938853,
+          "normalized_Lp_standalone_95_bound_if_envelope_holds": 0.40415024521594173,
+          "normalized_Lp_simultaneous_95_bound_if_envelopes_hold": 0.4222683591843739,
+          "Lebesgue_Lp_point_estimate": 0.19478481019725033,
+          "Lebesgue_Lp_standalone_95_bound_if_envelope_holds": 0.5494497842905804,
+          "Lebesgue_Lp_simultaneous_95_bound_if_envelopes_hold": 0.5740816976187243,
+          "max_abs_residual_on_validation": 0.6604909896850586
+        },
+        {
+          "outer": 7,
+          "evaluated_policy_source": "greedy_from_outer_6",
+          "residual_operator": "frozen_policy_evaluation",
+          "M": 50000,
+          "sample_weight_mean": 1.0046933333333332,
+          "sample_weight_max": 2.0,
+          "empirical_residual_envelope_S_R": 0.9451310634613037,
+          "empirical_variable_envelope_w_abs_r_p": 1.4255492283813334,
+          "envelope_scan_points": 200000,
+          "normalized_Lp_point_estimate": 0.06192722793924402,
+          "normalized_Lp_standalone_95_bound_if_envelope_holds": 0.4453548056358534,
+          "normalized_Lp_simultaneous_95_bound_if_envelopes_hold": 0.4653556758319776,
+          "Lebesgue_Lp_point_estimate": 0.08419121956675006,
+          "Lebesgue_Lp_standalone_95_bound_if_envelope_holds": 0.6054681514758136,
+          "Lebesgue_Lp_simultaneous_95_bound_if_envelopes_hold": 0.6326597069554164,
+          "max_abs_residual_on_validation": 0.30454301834106445
+        },
+        {
+          "outer": 8,
+          "evaluated_policy_source": "greedy_from_outer_7",
+          "residual_operator": "frozen_policy_evaluation",
+          "M": 50000,
+          "sample_weight_mean": 1.0006755555555555,
+          "sample_weight_max": 2.0,
+          "empirical_residual_envelope_S_R": 0.8836811184883118,
+          "empirical_variable_envelope_w_abs_r_p": 0.9523650497020173,
+          "envelope_scan_points": 200000,
+          "normalized_Lp_point_estimate": 0.021971838009763194,
+          "normalized_Lp_standalone_95_bound_if_envelope_holds": 0.41639850308689585,
+          "normalized_Lp_simultaneous_95_bound_if_envelopes_hold": 0.43509906775092916,
+          "Lebesgue_Lp_point_estimate": 0.0298711229247963,
+          "Lebesgue_Lp_standalone_95_bound_if_envelope_holds": 0.5661015189481589,
+          "Lebesgue_Lp_simultaneous_95_bound_if_envelopes_hold": 0.5915252848431297,
+          "max_abs_residual_on_validation": 0.10221770405769348
+        }
+      ],
+      "weighted_Lp_point_estimate": 0.021971838009763194,
+      "weighted_Lp_high_prob_bound": 0.41639850308689585,
+      "weighted_Lp_simultaneous_high_prob_bound": 0.43509906775092916,
+      "envelope_B_R": 0.8836811184883118,
+      "max_abs_residual_on_validation": 0.10221770405769348,
+      "final_bellman_Lp_point_estimate_separate_diagnostic": 0.02197185798321916
+    },
+    "greedy_gap": {
+      "constraint_set": "unbounded (A = R^N); greedy map analytic",
+      "max_foc_residual": 0.0
+    },
+    "radius_sensitivity": {
+      "sup_policy_diff_interior": 0.06717748939990997,
+      "mean_policy_diff_interior": 0.011044055223464966,
+      "sup_reference_policy_norm": 0.668320051983476,
+      "relative_sup": 0.10051694424031873
+    },
+    "newton_saturation": {
+      "heldout_value_errors": [
+        0.039973014504258116,
+        0.03782169634174652,
+        0.0377009348842873,
+        0.03766363147423073,
+        0.037349144851978246,
+        0.03766991593105984,
+        0.03768013474038532,
+        0.03758003045576258
+      ],
+      "evaluation_floor": 0.037349144851978246,
+      "saturation_outer_index": 1
+    }
+  }
+}

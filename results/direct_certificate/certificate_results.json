@@ -1,0 +1,76 @@
+{
+  "candidate_sha256": "972454d0f9e7780ab756ad6d0f2aa4767954c6f8d074c8669573577385e21f1c",
+  "verifier_sha256": "5214d36d1ccfd01aae4b0a7f4e2d883c317becfe84ae50b49801d212e54a31c2",
+  "environment": {
+    "python": "3.12.10",
+    "numpy": "2.5.2"
+  },
+  "target_residual": 0.0002,
+  "certificate": {
+    "certified": true,
+    "covered_area_exact": "1",
+    "visited_cells": 481,
+    "accepted_cells": 241,
+    "switching_cells": 83,
+    "branch_cells": {
+      "lower": 68,
+      "interior": 157,
+      "upper": 99
+    },
+    "max_depth": 12,
+    "u_lower": 0.9699999999999999,
+    "bellman_residual_sup_upper": 0.00019932234214238575
+  },
+  "diagnostics": {
+    "sampled_residual_sup_NOT_certificate": 0.00016119810530258738,
+    "sampled_u_min_NOT_certificate": 0.97,
+    "sampled_active_lower_fraction": 0.3034825870646766,
+    "sampled_active_upper_fraction": 0.09952723942476671
+  },
+  "training_history": [
+    {
+      "iteration": 1,
+      "sampled_frozen_residual_sup": 0.00015357468868191755
+    },
+    {
+      "iteration": 2,
+      "sampled_frozen_residual_sup": 0.00015357454921127137
+    },
+    {
+      "iteration": 3,
+      "sampled_frozen_residual_sup": 0.00015357454921129977
+    },
+    {
+      "iteration": 4,
+      "sampled_frozen_residual_sup": 0.00015357454921127245
+    },
+    {
+      "iteration": 5,
+      "sampled_frozen_residual_sup": 0.00015357454921130498
+    },
+    {
+      "iteration": 6,
+      "sampled_frozen_residual_sup": 0.00015357454921126465
+    },
+    {
+      "iteration": 7,
+      "sampled_frozen_residual_sup": 0.00015357454921130324
+    },
+    {
+      "iteration": 8,
+      "sampled_frozen_residual_sup": 0.00015357454921126638
+    }
+  ],
+  "rounding": "exact Fraction algebra; outward binary64 Bernstein arithmetic; mpmath iv barrier",
+  "bounds": {
+    "c_upper_exact": "9/50",
+    "horizon_exact": "1/4",
+    "trace_mismatch_exact": "0",
+    "barrier_factor_upper": 0.25571033282620526,
+    "value_factor_sup_error_upper": 5.096878244892822e-05,
+    "greedy_value_factor_suboptimality_upper": 0.00010193756489785643,
+    "utility_regret_at_unit_wealth_upper": 0.00010193756489785643,
+    "scope": "continuous bounded-domain Dirichlet problem only"
+  },
+  "seconds": 0.4102178000030108
+}

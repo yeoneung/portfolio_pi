@@ -1,0 +1,355 @@
+{
+  "comparison_group": "N_30_M10",
+  "configured_outer_iterations": 20,
+  "figure": "code/pipinn_nemerical/outputs/comparisons/training_curves/N_30_M10/training_loss_pinn_vs_pipinn.png",
+  "figure_dpi": 300,
+  "figure_sha256": "9849ecb370fd282814e9b5676f06b0b49023c1aed9197ca9cb5c909c4f293baf",
+  "m_states": 10,
+  "market_seed": 12,
+  "n_assets": 30,
+  "outer_axis_alignment": {
+    "pinn_blocks": 20,
+    "pinn_epochs": 40000,
+    "pinn_resample_every": 2000,
+    "pipinn_inner_epochs": 2000,
+    "pipinn_outer_iters": 20
+  },
+  "pinn": {
+    "block_end_epochs": [
+      2000,
+      4000,
+      6000,
+      8000,
+      10000,
+      12000,
+      14000,
+      16000,
+      18000,
+      20000,
+      22000,
+      24000,
+      26000,
+      28000,
+      30000,
+      32000,
+      34000,
+      36000,
+      38000,
+      40000
+    ],
+    "config_hash": "7cc8a0fafa4e8825ae228bbce7b072d17a1333cfc81b94cd013a2ed6ab7eddb5",
+    "history": "code/pipinn_nemerical/outputs/outputs/pinn/N_30_M10/train_history.csv",
+    "history_sha256": "da141004ec61eafc57d672e45ebc6b414e30cb395af684cb17132fac30283955",
+    "job_id": 6,
+    "outer_iterations": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20
+    ],
+    "points": 20,
+    "selection_rule": "epoch % resample_every == 0",
+    "series": [
+      {
+        "block_end_epoch": 2000,
+        "outer_iteration": 1,
+        "total_training_loss": 6.540109461639076e-05
+      },
+      {
+        "block_end_epoch": 4000,
+        "outer_iteration": 2,
+        "total_training_loss": 1.8080325389746577e-05
+      },
+      {
+        "block_end_epoch": 6000,
+        "outer_iteration": 3,
+        "total_training_loss": 1.2172052265668754e-05
+      },
+      {
+        "block_end_epoch": 8000,
+        "outer_iteration": 4,
+        "total_training_loss": 8.64363755681552e-06
+      },
+      {
+        "block_end_epoch": 10000,
+        "outer_iteration": 5,
+        "total_training_loss": 6.4449159253854305e-06
+      },
+      {
+        "block_end_epoch": 12000,
+        "outer_iteration": 6,
+        "total_training_loss": 3.834395101875998e-06
+      },
+      {
+        "block_end_epoch": 14000,
+        "outer_iteration": 7,
+        "total_training_loss": 2.481575847923523e-06
+      },
+      {
+        "block_end_epoch": 16000,
+        "outer_iteration": 8,
+        "total_training_loss": 2.1488779111678014e-06
+      },
+      {
+        "block_end_epoch": 18000,
+        "outer_iteration": 9,
+        "total_training_loss": 1.6554100739085698e-06
+      },
+      {
+        "block_end_epoch": 20000,
+        "outer_iteration": 10,
+        "total_training_loss": 1.5545588212262373e-06
+      },
+      {
+        "block_end_epoch": 22000,
+        "outer_iteration": 11,
+        "total_training_loss": 3.3811224966484588e-06
+      },
+      {
+        "block_end_epoch": 24000,
+        "outer_iteration": 12,
+        "total_training_loss": 1.7318579921266064e-06
+      },
+      {
+        "block_end_epoch": 26000,
+        "outer_iteration": 13,
+        "total_training_loss": 5.6068229241645895e-06
+      },
+      {
+        "block_end_epoch": 28000,
+        "outer_iteration": 14,
+        "total_training_loss": 1.6917801985982805e-06
+      },
+      {
+        "block_end_epoch": 30000,
+        "outer_iteration": 15,
+        "total_training_loss": 9.68659037425823e-07
+      },
+      {
+        "block_end_epoch": 32000,
+        "outer_iteration": 16,
+        "total_training_loss": 7.535392114732531e-07
+      },
+      {
+        "block_end_epoch": 34000,
+        "outer_iteration": 17,
+        "total_training_loss": 1.2281243471079506e-05
+      },
+      {
+        "block_end_epoch": 36000,
+        "outer_iteration": 18,
+        "total_training_loss": 6.569447350557311e-07
+      },
+      {
+        "block_end_epoch": 38000,
+        "outer_iteration": 19,
+        "total_training_loss": 6.085645622988523e-07
+      },
+      {
+        "block_end_epoch": 40000,
+        "outer_iteration": 20,
+        "total_training_loss": 1.1952440672757803e-06
+      }
+    ],
+    "source_x_field": "epoch",
+    "tag": "N_30_M10",
+    "y_field": "total"
+  },
+  "pinn_tag": "N_30_M10",
+  "pipinn": {
+    "config_hash": "6380ec012cce60d7ecf147c26f094fe7cd9ade116102f468aee1a7b6cf7a9c9b",
+    "history": "code/pipinn_nemerical/outputs/outputs/pipinn/N_30_M10/outer_history.csv",
+    "history_sha256": "b9b2b2fc61804985614bcb7e74b1e4c9248afc7d755a3644dde8340890be0550",
+    "job_id": 7,
+    "omitted_outer_states": [],
+    "outer_iterations": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20
+    ],
+    "points": 20,
+    "selected_inner_epochs": [
+      1950,
+      2000,
+      1950,
+      1950,
+      2000,
+      1650,
+      900,
+      1950,
+      1950,
+      1950,
+      2000,
+      1700,
+      1600,
+      950,
+      2000,
+      1950,
+      2000,
+      1950,
+      1700,
+      2000
+    ],
+    "selection_rule": "accepted/restored inner-best state",
+    "series": [
+      {
+        "accepted_train_total": 6.536262662848458e-05,
+        "outer_iteration": 1,
+        "selected_inner_epoch": 1950
+      },
+      {
+        "accepted_train_total": 1.8363551134825684e-05,
+        "outer_iteration": 2,
+        "selected_inner_epoch": 2000
+      },
+      {
+        "accepted_train_total": 1.1566064131329767e-05,
+        "outer_iteration": 3,
+        "selected_inner_epoch": 1950
+      },
+      {
+        "accepted_train_total": 8.435414201812819e-06,
+        "outer_iteration": 4,
+        "selected_inner_epoch": 1950
+      },
+      {
+        "accepted_train_total": 6.762010798411211e-06,
+        "outer_iteration": 5,
+        "selected_inner_epoch": 2000
+      },
+      {
+        "accepted_train_total": 4.5147889977670275e-06,
+        "outer_iteration": 6,
+        "selected_inner_epoch": 1650
+      },
+      {
+        "accepted_train_total": 3.4848742416215828e-06,
+        "outer_iteration": 7,
+        "selected_inner_epoch": 900
+      },
+      {
+        "accepted_train_total": 1.9067749690293567e-06,
+        "outer_iteration": 8,
+        "selected_inner_epoch": 1950
+      },
+      {
+        "accepted_train_total": 1.349448552900867e-06,
+        "outer_iteration": 9,
+        "selected_inner_epoch": 1950
+      },
+      {
+        "accepted_train_total": 1.2079065072612138e-06,
+        "outer_iteration": 10,
+        "selected_inner_epoch": 1950
+      },
+      {
+        "accepted_train_total": 1.0549670150794555e-06,
+        "outer_iteration": 11,
+        "selected_inner_epoch": 2000
+      },
+      {
+        "accepted_train_total": 9.144503110292135e-07,
+        "outer_iteration": 12,
+        "selected_inner_epoch": 1700
+      },
+      {
+        "accepted_train_total": 8.016243100428255e-07,
+        "outer_iteration": 13,
+        "selected_inner_epoch": 1600
+      },
+      {
+        "accepted_train_total": 7.333021017075225e-07,
+        "outer_iteration": 14,
+        "selected_inner_epoch": 950
+      },
+      {
+        "accepted_train_total": 6.79689605931344e-07,
+        "outer_iteration": 15,
+        "selected_inner_epoch": 2000
+      },
+      {
+        "accepted_train_total": 5.812154881823517e-07,
+        "outer_iteration": 16,
+        "selected_inner_epoch": 1950
+      },
+      {
+        "accepted_train_total": 5.16596742272668e-07,
+        "outer_iteration": 17,
+        "selected_inner_epoch": 2000
+      },
+      {
+        "accepted_train_total": 5.263282218948007e-07,
+        "outer_iteration": 18,
+        "selected_inner_epoch": 1950
+      },
+      {
+        "accepted_train_total": 4.872971430813777e-07,
+        "outer_iteration": 19,
+        "selected_inner_epoch": 1700
+      },
+      {
+        "accepted_train_total": 4.5173692342359573e-07,
+        "outer_iteration": 20,
+        "selected_inner_epoch": 2000
+      }
+    ],
+    "source_x_field": "outer_iter",
+    "tag": "N_30_M10",
+    "y_field": "accepted_train_total"
+  },
+  "pipinn_tag": "N_30_M10",
+  "plotter_source_sha256": "90474f9dde46902881214648983f311063d6273a58c3b8af8caf49daed9d088a",
+  "schema": "homogeneous_training_comparison_v2",
+  "seed": 12,
+  "shared_config_differences": {
+    "lr_schedule": {
+      "pinn": "plateau",
+      "pipinn": "carry_plateau"
+    },
+    "scheduler_patience": {
+      "pinn": "3000",
+      "pipinn": "20"
+    }
+  },
+  "status": "COMPLETE",
+  "x_axis": "outer_iteration",
+  "x_semantics": {
+    "pinn": "total training loss at the end of each fixed-collocation resampling block",
+    "pipinn": "total training loss of the accepted/restored inner-best state at each policy-iteration outer step"
+  },
+  "y_axis": "total_training_loss",
+  "y_scale": "log"
+}

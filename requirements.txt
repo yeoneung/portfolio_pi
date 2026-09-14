@@ -1,0 +1,9 @@
+-r requirements-core.txt
+scipy==1.18.0
+pandas==3.0.5
+matplotlib==3.11.1
+torch==2.11.0
+scikit-learn==1.9.0
+pydantic==2.13.5
+PyYAML==6.0.3
+pytest==9.1.1
