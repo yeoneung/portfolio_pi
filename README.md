@@ -10,6 +10,7 @@ upload, journal submission package, cover letter, or editorial archive.
 | Experiment | Supplied records | Scope |
 | --- | --- | --- |
 | Locally coupled 3--50-state markets | `results/highdim_local/` | Continuous CE certificates, matched baselines, and boundary sensitivity |
+| Heterogeneous 10--50-state markets | `results/highdim_heterogeneous/` | Distinct return predictors and evaluations, with every local cylinder verified |
 | Two-asset fixed-policy evaluation | `results/portfolio_welfare/`, `results/policy_loss/`, `results/local_policy/` | Direct, global, and local evaluation precision for the same policy |
 | Frozen neural policy | `results/neural_certificate/` | Exact stored network weights and full-cylinder/whole-space verification |
 | Financial-duality comparison | `results/neural_duality/` | Matched Monte Carlo and PDE-refinement estimates for the same network |
@@ -50,6 +51,7 @@ python run.py verify-neural-welfare
 python experiments/highdim_local_verify.py --dimensions 3 5 10 20 50
 python experiments/highdim_local_verify.py --dimensions 3 5 10 20 50 --folder results/highdim_local/time_only
 python experiments/highdim_local_verify.py --dimensions 10 20 50 --radius 1
+python experiments/highdim_heterogeneous.py --dimensions 10 20 50
 ```
 
 Verification does not refit the generating policy. It recomputes and overwrites
@@ -82,6 +84,7 @@ as are generated figures. No paper build is needed.
 python run.py fit-welfare
 python run.py fit-policy-loss
 python run.py fit-local-policy
+python experiments/highdim_heterogeneous.py --fit --refine-failed --dimensions 10 20 50
 python run.py train-empirical --universe ff25 --prepare-only --device cpu
 ```
 
