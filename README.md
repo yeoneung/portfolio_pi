@@ -11,6 +11,7 @@ upload, journal submission package, cover letter, or editorial archive.
 | --- | --- | --- |
 | Locally coupled 3--50-state markets | `results/highdim_local/` | Continuous CE certificates, matched baselines, and boundary sensitivity |
 | Heterogeneous 10--50-state markets | `results/highdim_heterogeneous/` | Distinct return predictors and evaluations, with every local cylinder verified |
+| Correlated network markets with 10--50 states | `results/highdim_network/` | Risk aversion 3, an irregular factor tree, correlated assets, and all coordinate cylinders verified |
 | Two-asset fixed-policy evaluation | `results/portfolio_welfare/`, `results/policy_loss/`, `results/local_policy/` | Direct, global, and local evaluation precision for the same policy |
 | Frozen neural policy | `results/neural_certificate/` | Exact stored network weights and full-cylinder/whole-space verification |
 | Separate neural-policy certification | `results/neural_separate_evaluation/` | A 13.345 bp whole-space bound from fixed-policy evaluation and an independent Bellman comparison |
@@ -56,6 +57,7 @@ python experiments/highdim_local_verify.py --dimensions 3 5 10 20 50
 python experiments/highdim_local_verify.py --dimensions 3 5 10 20 50 --folder results/highdim_local/time_only
 python experiments/highdim_local_verify.py --dimensions 10 20 50 --radius 1
 python experiments/highdim_heterogeneous.py --dimensions 10 20 50
+python experiments/highdim_network.py --dimensions 10 20 50
 python experiments/verify_neural_separate_parallel.py results/neural_separate_evaluation/adapted_policy.json --workers 4
 python experiments/verify_neural_separate_parallel.py results/neural_separate_evaluation/adapted_bellman.json --workers 4
 python experiments/neural_separate_welfare.py results/neural_separate_evaluation/adapted_policy.json results/neural_separate_evaluation/adapted_bellman.json --output results/neural_separate_evaluation/whole_space_refined.json
@@ -80,6 +82,7 @@ python run.py empirical --update-tables
 python run.py localization-budget
 python run.py figures
 python analysis/plot_neural_residual_envelopes.py
+python analysis/report_highdim_network.py
 ```
 
 Reports check candidate/source hashes where applicable. Optional numerical
@@ -94,6 +97,7 @@ python run.py fit-welfare
 python run.py fit-policy-loss
 python run.py fit-local-policy
 python experiments/highdim_heterogeneous.py --fit --refine-failed --dimensions 10 20 50
+python experiments/highdim_network.py --fit --dimensions 10 20 50
 python run.py train-empirical --universe ff25 --prepare-only --device cpu
 ```
 

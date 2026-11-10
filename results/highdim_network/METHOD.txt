@@ -1,0 +1,121 @@
+CORRELATED ASSET RETURNS ON AN IRREGULAR FACTOR NETWORK
+
+Model
+-----
+There are d predictive state variables and d risky assets, d=10,20,50.
+The asset covariance is I+A/10, where A is the adjacency matrix of the
+undirected binary tree with zero-based parent(i)=(i-1)//2, i=1,...,d-1.
+Thus adjacent asset returns have correlation 0.1. The graph is connected;
+it has d-1 edges and vertices of degrees 1, 2, and 3.
+
+The state interaction matrix is M=A/4+diag(1-degree(i)/4). It is symmetric,
+entrywise nonnegative, and doubly stochastic. State drift is (-I+M/5)z,
+state covariance is I/16, and asset/state cross covariance is I/8.
+The joint covariance is positive definite: the lower row-sum bound for
+asset covariance is at least 0.7, while chi^2/Q=0.25.
+
+Risk aversion is gamma=3, r=3/100, T=1, and the cube radius is 3/2.
+The exposure constraints are |pi_i|<=11/(100 sqrt(d)). For zero-based i,
+s_i=2*i/(d-1)-1 and t_i=2*((3*i+1) mod d)/(d-1)-1. Excess returns are
+  [ell_i+a_i*z_i+b_i*(M z)_i]/sqrt(d),
+  ell_i=(1+s_i/5)/5, a_i=(1+t_i/5)/2, b_i=(1-s_i/5)/4.
+Every intercept is distinct, and the predictor matrix is full rank by
+strict diagonal dominance. Independent state noise is present in every
+coordinate; this is not a one-state model with many assets.
+
+Deployed policy and candidates
+-----------------------------
+Each coordinate has its own 15-coefficient polynomial
+  f_i(tau,x)=tau sum_{j=0}^4 T_j(2*tau-1)*(c_0j+c_1j*x+c_2j*x^2).
+The factor candidate is exp((1-gamma)*r*tau+sum_i f_i(tau,z_i)/d).
+The generating coefficients f_0,i define the feasible componentwise rule
+  pi_i=clip((ell_i+a_i*z_i+b_i*(M z)_i+chi*f_0,i,x/sqrt(d))/gamma,
+            -11/100,11/100)/sqrt(d).
+This componentwise rule is not asserted to solve the covariance-metric
+greedy QP. Its welfare is certified against the optimal policy for the
+full correlated covariance I+A/10. It is zero outside the cube and is
+reapplied at re-entry. Separate evaluation leaves this rule unchanged.
+
+GPU coefficient proposals use the actual correlated fixed-policy generator,
+float64 arithmetic, seed 1110, and 1200 Adam updates on an RTX 5070.
+Each update uses 2048 joint-state draws, mixing 97% from the stationary
+physical Gaussian distribution with 3% uniform on the cube.
+Sampled fitting never supplies the certificate.
+
+The two evaluation polynomials at each coordinate are fitted by three
+sequential linear programs. A representative homogeneous proposal supplies
+common potentials phi_L,phi_U; these potentials are held fixed during the
+coordinate-dependent evaluation fits. Each potential has five Chebyshev
+time coefficients multiplying x and one constant coefficient multiplying
+x^2. The quadratic coefficient is nonpositive for phi_L and nonnegative
+for phi_U. Initial proposals use 13 time nodes and 37 nodes for each of
+x,y; refinement uses 25 time nodes and 73 spatial nodes. Verified dyadic
+time shifts can enforce the requested tolerance without changing spatial
+derivatives. All final coefficients are exact multiples of 2^-36.
+
+Proof behind verification
+-------------------------
+Let s_i^-=1-degree(i)/10 and s_i^+=1+degree(i)/10. The exact inequality
+2|v_i*v_j|<=v_i^2+v_j^2 gives
+  diag(s_i^-) <= Sigma <= diag(s_i^+)
+in the positive-semidefinite order. This bounds the original coupled
+quadratic control term; the stochastic market covariance is not replaced.
+Define
+  F_i(f,p;s)=f_tau+(x-y/5)*f_x-Q*f_xx/2-Q*f_x^2/(2d)
+           +(gamma-1)*[p*(ell_i+a_i*x+b_i*y+chi*f_x/sqrt(d))
+                        -gamma*s*p^2/2].
+The normalized Bellman residual is at most the average of
+max_{|p|<=11/100} F_i(f_L,i,p;s_i^-). The normalized fixed-policy residual
+is at least the average of F_i(f_U,i,p_0,i;s_i^+).
+
+For y_i=(M z)_i, concavity and double stochasticity give
+  sum_i [phi_L(tau,y_i)-phi_L(tau,z_i)] >= 0.
+Convexity gives the reverse inequality for phi_U. Thus continuous bounds
+on F_i+phi(tau,y)-phi(tau,x), on the rectangle [-R,R]^2, imply global
+residual bounds in d states. This also explains why three-variable local
+enclosures remain sufficient on a branching graph. Every coordinate
+cylinder is checked separately; no rotational-symmetry reuse occurs.
+
+Each check retains all compatible clipping branches, enforces the exact
+terminal trace, and encloses the lateral trace differences divided by tau.
+The code uses 60-digit interval coefficient algebra, rational Bernstein
+transforms, and outward-rounded binary64 de Casteljau subdivision.
+All accepted dyadic cells together have exact volume one; the residual
+and trace tolerances are 1/1000. Each exponent uses its actual verified
+coordinate correction, averaged over all d coordinates.
+
+The exit estimate is uniform over admissible controls. Its stopped
+coordinate drift shift is epsilon*R+(gamma-1)*chi*cap/sqrt(d); it uses
+128 time bins and the exponential martingale inequality. Continuation
+uses the weight exp(|z|^2/(20d)), the full covariance upper bound, and
+the generator constants in the network-comparison proposition.
+The whole-space lower and upper factors include this exit correction.
+For gamma=3 the CE-loss upper bound is 10000*(1-sqrt(lower/upper)) bp.
+
+Reproduction
+------------
+The one-year whole-space CE upper bounds, rounded upward, are 61.425 bp
+at d=10, 63.248 bp at d=20, and 64.896 bp at d=50. Accepted cell counts
+are 46,127, 96,995, and 256,066. Serial verification times for the supplied
+records are 7.73, 15.95, and 41.45 seconds, respectively.
+
+From the code root, in a copy if the original manifest is to be preserved:
+  python experiments/highdim_network.py --dimensions 10 20 50
+  python analysis/report_highdim_network.py
+  python -m pytest tests/test_highdim_network.py -q
+Regenerate proposals and verify them:
+  python experiments/highdim_network.py --fit --dimensions 10 20 50
+
+Candidate files contain all market matrices and exact polynomial coefficients.
+Certificate files contain every coordinate cover, localization constants,
+factor endpoints, input/source hashes, and CPU verification times. Summary
+and table generation recheck hashes and independently repeat the interval
+endpoint assembly. Table times sum the serial verification of all final
+coordinate candidates. Gaussian training and sampled LP proposals are
+excluded from these verification times.
+
+Mathematical conventions checked against standard sources: positive-
+semidefinite order and Jensen's inequality, Boyd and Vandenberghe,
+Convex Optimization (2004), Chapters 2 and 3:
+https://web.stanford.edu/~boyd/cvxbook/
+The required matrix and network inequalities are proved explicitly above.

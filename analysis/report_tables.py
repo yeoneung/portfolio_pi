@@ -6,6 +6,7 @@ from pathlib import Path
 
 import report_highdim_local
 import report_neural_duality
+import report_highdim_network
 
 ROOT = Path(__file__).resolve().parents[1]
 TABLES = ROOT/'results/tables'
@@ -61,6 +62,7 @@ def main():
     report_highdim_local.main()
     report_neural_duality.main()
     build_tables()
+    report_highdim_network.main()
 
 
 if __name__ == '__main__':
