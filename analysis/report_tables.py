@@ -1,6 +1,7 @@
 """Export numerical comparison tables from hash-checked experiment records."""
 from decimal import Decimal, ROUND_CEILING
 import json
+import hashlib
 from pathlib import Path
 
 import report_highdim_local
@@ -26,6 +27,19 @@ def save(name, header, rows, align):
 def build_tables():
     hd = json.loads((ROOT/'results/highdim_local/summary.json').read_text())
     dual = json.loads((ROOT/'results/neural_duality/summary.json').read_text())
+    separate=[]
+    for name in ('whole_space_coarse.json','whole_space_refined.json'):
+        directory=ROOT/'results/neural_separate_evaluation'
+        item=json.loads((directory/name).read_bytes())
+        if not item.get('whole_space_certified') or item['checkpoint_sha256']!=dual['checkpoint_sha256']:
+            raise ValueError('Completed matched-policy certificate required: '+name)
+        for source,digest in item['input_sha256'].items():
+            path=(ROOT/'results/neural_certificate'/source if source=='seed_11_final.json' else directory/source)
+            if hashlib.sha256(path.read_bytes()).hexdigest()!=digest:
+                raise ValueError('Stale separate certificate input: '+source)
+        if hashlib.sha256((ROOT/'experiments/neural_separate_welfare.py').read_bytes()).hexdigest()!=item['combination_source_sha256']:
+            raise ValueError('Changed separate-welfare computation')
+        separate.append(item)
     save('tab_highdim.tex', r'$d$ & PDE & Hybrid & Time-only hybrid & Cells & Verify (s)',
          [[str(x['state_dimension']), upper(x['two_sided_pde_ce_upper_bp']),
            upper(x['hybrid_ce_upper_bp']), upper(x['time_only_hybrid_ce_upper_bp']),
@@ -35,7 +49,9 @@ def build_tables():
            upper(x['localization_upper'], 8)] for x in hd['smaller_cube_same_policy']], 'rrrr')
     ci = dual['mc_finest_sampling_95_interval_bp']
     save('tab_neural_duality.tex', 'Evaluation & CE gap (bp) & Status',
-         [['Outward PDE and localization', upper(dual['rigorous_relative_ce_upper_bp']), 'Continuous certificate'],
+         [['Direct neural comparison', upper(dual['rigorous_relative_ce_upper_bp']), 'Continuous certificate'],
+          ['Separate comparison (75 slabs)',upper(separate[0]['relative_ce_loss_upper_bp']),'Continuous certificate'],
+          ['Separate comparison (139 slabs)',upper(separate[1]['relative_ce_loss_upper_bp']),'Continuous certificate'],
           ['Duality Monte Carlo', f"{dual['mc_finest_gap_bp']:.3f}", f"95\\% sampling CI $[{ci[0]:.3f},{ci[1]:.3f}]$"],
           ['Duality PDE refinement', f"{dual['pde_finest_gap_bp']:.3f}", 'Numerical estimate']], 'lrl')
     print('Generated three numerical tables from the supplied records.')

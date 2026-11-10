@@ -13,11 +13,15 @@ upload, journal submission package, cover letter, or editorial archive.
 | Heterogeneous 10--50-state markets | `results/highdim_heterogeneous/` | Distinct return predictors and evaluations, with every local cylinder verified |
 | Two-asset fixed-policy evaluation | `results/portfolio_welfare/`, `results/policy_loss/`, `results/local_policy/` | Direct, global, and local evaluation precision for the same policy |
 | Frozen neural policy | `results/neural_certificate/` | Exact stored network weights and full-cylinder/whole-space verification |
+| Separate neural-policy certification | `results/neural_separate_evaluation/` | A 13.345 bp whole-space bound from fixed-policy evaluation and an independent Bellman comparison |
 | Financial-duality comparison | `results/neural_duality/` | Matched Monte Carlo and PDE-refinement estimates for the same network |
 | Empirical portfolios | `code/empirical_src_bundle/`, `results/empirical_tables/` | Supplied monthly paths, costs, bootstrap/HAC, and subperiod statistics |
 
 The markets and horizons differ; these are not cross-market performance rankings.
 Read the experiment-specific `METHOD.md`/`REPORT.md` files and `DATA_SOURCES.md`.
+The separate neural-policy proof and reproduction commands are in
+`results/neural_separate_evaluation/METHOD.txt`; its original deployment rule
+and network weights are unchanged.
 Numerical duality estimates are distinct from continuous-time certificates.
 The high-dimensional family uses local interactions and structured evaluations.
 
@@ -52,6 +56,9 @@ python experiments/highdim_local_verify.py --dimensions 3 5 10 20 50
 python experiments/highdim_local_verify.py --dimensions 3 5 10 20 50 --folder results/highdim_local/time_only
 python experiments/highdim_local_verify.py --dimensions 10 20 50 --radius 1
 python experiments/highdim_heterogeneous.py --dimensions 10 20 50
+python experiments/verify_neural_separate_parallel.py results/neural_separate_evaluation/adapted_policy.json --workers 4
+python experiments/verify_neural_separate_parallel.py results/neural_separate_evaluation/adapted_bellman.json --workers 4
+python experiments/neural_separate_welfare.py results/neural_separate_evaluation/adapted_policy.json results/neural_separate_evaluation/adapted_bellman.json --output results/neural_separate_evaluation/whole_space_refined.json
 ```
 
 Verification does not refit the generating policy. It recomputes and overwrites
@@ -72,11 +79,13 @@ python run.py test
 python run.py empirical --update-tables
 python run.py localization-budget
 python run.py figures
+python analysis/plot_neural_residual_envelopes.py
 ```
 
 Reports check candidate/source hashes where applicable. Optional numerical
-LaTeX tables are generated under `results/tables/` and excluded from Git,
-as are generated figures. No paper build is needed.
+LaTeX tables are generated under `results/tables/` and excluded from Git.
+Selected experiment figures are supplied with their result records.
+No paper build is needed.
 
 ## Fitting
 

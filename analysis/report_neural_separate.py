@@ -54,8 +54,6 @@ def main():
         'scope':'30 assets, one state variable, gamma=2, T=3, initial center',
         'whole_space_certified':True,
         'method':'frozen-policy upper comparison plus independent Bellman lower comparison and exit bounds',
-        'manuscript_updated':False,'arxiv_manuscript_updated':False,
-        'public_repository_updated':False,
         'inputs_sha256':{p.name:hashlib.sha256(p.read_bytes()).hexdigest() for p in
                         (old_path,OUT/'whole_space_coarse.json',OUT/'whole_space_refined.json')},
         'report_source_sha256':hashlib.sha256(Path(__file__).read_bytes()).hexdigest()}

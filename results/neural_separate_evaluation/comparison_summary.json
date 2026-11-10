@@ -38,13 +38,10 @@
   "scope": "30 assets, one state variable, gamma=2, T=3, initial center",
   "whole_space_certified": true,
   "method": "frozen-policy upper comparison plus independent Bellman lower comparison and exit bounds",
-  "manuscript_updated": false,
-  "arxiv_manuscript_updated": false,
-  "public_repository_updated": false,
   "inputs_sha256": {
     "neural_welfare_bound.json": "b6a52e80269bcb9c459c2e667123a4d9a8c04883f15bf606608b359dd157c074",
     "whole_space_coarse.json": "26d80751323608230bd8ab70cdb4d5bebedac5f4882dbc58232f8195463052ce",
     "whole_space_refined.json": "b0e1e355d18e07aa7851d9da54dc2f8982497745f179b4caa6651210ab6ce89c"
   },
-  "report_source_sha256": "b96b5d8901b35a0a464fa193074d547bf761909ee519f3b486fc8978eea00b8c"
+  "report_source_sha256": "a4c6ec07b24ec5dceac6d6c099417dc28be04498ccd24e8de23377a6535b10d9"
 }

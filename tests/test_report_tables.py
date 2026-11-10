@@ -22,7 +22,7 @@ def generated_tables(tmp_path_factory):
 
 
 def test_upward_rounding_encloses_stored_binary_bound():
-    for value in [.000000123456789, .0046856557, 35.68777864686418, 966.1235385645142]:
+    for value in [.000000123456789, .0046856557, 13.344308234617182, 35.68777864686418, 966.1235385645142]:
         for places in (3, 6, 8):
             rounded = Decimal(report.upper(value, places))
             exact = Decimal.from_float(value)
@@ -46,3 +46,8 @@ def test_neural_numerical_and_continuous_status_are_distinct():
     assert report.upper(data['rigorous_relative_ce_upper_bp']) in text
     assert 'Continuous certificate' in text and 'sampling CI' in text
     assert 'Numerical estimate' in text
+    for name,slabs in (('coarse',75),('refined',139)):
+        bound=json.loads((ROOT/f'results/neural_separate_evaluation/whole_space_{name}.json').read_bytes())
+        row=next(line for line in text.splitlines() if f'({slabs} slabs)' in line)
+        assert report.upper(bound['relative_ce_loss_upper_bp']) in row
+        assert 'Continuous certificate' in row

@@ -1,0 +1,7 @@
+{
+  "input_sha256": {
+    "adapted_policy_certificate.json": "0831be6639f9a21325bf6042a1cb215bcec9b12da15736ad3aef921806658c24",
+    "adapted_bellman_certificate.json": "e2559b223e134646411c16f4df8cc89ba6a143cc28390a3a62a8790716930a9b"
+  },
+  "generator_sha256": "f3eeb5cd6993b68faee4734cc44158271082ad5e2599cc225871807f6717aae5"
+}
