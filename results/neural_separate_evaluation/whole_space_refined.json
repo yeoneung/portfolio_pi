@@ -1,0 +1,41 @@
+{
+  "whole_space_certified": true,
+  "scope": "initial center; T=3; gamma=2; unchanged 30-asset neural policy",
+  "checkpoint_sha256": "47628e7e10fb3619a9ac44c01c35270e7074bc56e0b13e679765ebb21b9ad9d7",
+  "policy_updates_after_checkpoint": 0,
+  "outside_policy": "zero outside original domain, unchanged neural rule after re-entry",
+  "evaluation_domain_outer_multiple": 3,
+  "whole_space_optimal_factor_lower": 0.47387945627869804,
+  "whole_space_policy_factor_upper": 0.47451266059912445,
+  "relative_ce_loss_upper_bp": 13.344308234617182,
+  "bounded_domain_optimal_factor_lower": 0.47387945627869804,
+  "bounded_domain_policy_factor_upper": 0.47451266059912445,
+  "optimal_localization_upper": 4.303738514322945e-19,
+  "policy_localization_upper": 8.064593749019156e-19,
+  "uniform_bellman_reaction_upper_exact": "6134422270786308982608753557370126642743585668457/2923003274661805836407369665432566039311865085952",
+  "global_policy_reaction_upper_exact": "13492607159240715842380611494258765745385631994815/11692013098647223345629478661730264157247460343808",
+  "budget_bp": {
+    "candidate_factor_gap_bp_upper": 1.9199452949069356,
+    "bellman_residual_bp_upper": 3.212021750609281,
+    "frozen_policy_residual_bp_upper": 8.21234118910094,
+    "localization_bp_upper": 2.6042657334499614e-14
+  },
+  "exit_bound": {
+    "exit_probability_upper": 7.934547121534254e-22,
+    "lyapunov_exponent_exact": "110115936862895586/8557786884098117",
+    "generator_upper": 206.37682839815855,
+    "drift_shift_upper_exact": "14571048149847045657617303945419293/166153499473114484112975882535043072",
+    "spatial_enclosure_bins": 1024,
+    "method": "additive stopped Lyapunov bound"
+  },
+  "bellman_log_correction_upper": 0.0003213154722516317,
+  "frozen_policy_log_correction_upper": 0.0008219935340913135,
+  "input_sha256": {
+    "seed_11_final.json": "47628e7e10fb3619a9ac44c01c35270e7074bc56e0b13e679765ebb21b9ad9d7",
+    "adapted_policy.json": "12fcf354b1988265ea5a1989212cbb2115cc13038425ba5f4a217c38242f3dc8",
+    "adapted_bellman.json": "beaafe32b47f9a17b4a15ea1bb676a6333d47532aa697981038ab2ee0c2c191b",
+    "adapted_policy_certificate.json": "0831be6639f9a21325bf6042a1cb215bcec9b12da15736ad3aef921806658c24",
+    "adapted_bellman_certificate.json": "e2559b223e134646411c16f4df8cc89ba6a143cc28390a3a62a8790716930a9b"
+  },
+  "combination_source_sha256": "bbd8cefab0327bde8ee4fcfddfe91b75c1bae536a29d513839eedb2e4fb6f67f"
+}

@@ -1,0 +1,41 @@
+{
+  "whole_space_certified": true,
+  "scope": "initial center; T=3; gamma=2; unchanged 30-asset neural policy",
+  "checkpoint_sha256": "47628e7e10fb3619a9ac44c01c35270e7074bc56e0b13e679765ebb21b9ad9d7",
+  "policy_updates_after_checkpoint": 0,
+  "outside_policy": "zero outside original domain, unchanged neural rule after re-entry",
+  "evaluation_domain_outer_multiple": 3,
+  "whole_space_optimal_factor_lower": 0.47239166310187636,
+  "whole_space_policy_factor_upper": 0.47573459160876014,
+  "relative_ce_loss_upper_bp": 70.26877098802373,
+  "bounded_domain_optimal_factor_lower": 0.47239166310187636,
+  "bounded_domain_policy_factor_upper": 0.47573459160876014,
+  "optimal_localization_upper": 4.303738514322945e-19,
+  "policy_localization_upper": 8.064593749019156e-19,
+  "uniform_bellman_reaction_upper_exact": "6134422270786308982608753557370126642743585668457/2923003274661805836407369665432566039311865085952",
+  "global_policy_reaction_upper_exact": "13492607159240715842380611494258765745385631994815/11692013098647223345629478661730264157247460343808",
+  "budget_bp": {
+    "candidate_factor_gap_bp_upper": 1.919945444993172,
+    "bellman_residual_bp_upper": 34.5919354943036,
+    "frozen_policy_residual_bp_upper": 33.75689004872694,
+    "localization_bp_upper": 2.5879268759041542e-14
+  },
+  "exit_bound": {
+    "exit_probability_upper": 7.934547121534254e-22,
+    "lyapunov_exponent_exact": "110115936862895586/8557786884098117",
+    "generator_upper": 206.37682839815855,
+    "drift_shift_upper_exact": "14571048149847045657617303945419293/166153499473114484112975882535043072",
+    "spatial_enclosure_bins": 1024,
+    "method": "additive stopped Lyapunov bound"
+  },
+  "bellman_log_correction_upper": 0.0034658569728024217,
+  "frozen_policy_log_correction_upper": 0.0033938119174124616,
+  "input_sha256": {
+    "seed_11_final.json": "47628e7e10fb3619a9ac44c01c35270e7074bc56e0b13e679765ebb21b9ad9d7",
+    "march_expanded_refined.json": "6a9070c2cb83ec3539eba2b69a13b0991b4bd8a910a4dbbff9f6b682fb9edd45",
+    "march_bellman.json": "35a6dfa521c8ca7102ca7a02ecdf3093d64c44ce69fb4ec34c86d4bdced0e8ec",
+    "march_expanded_refined_certificate.json": "d390a6abefaca951324a2c4c2fe11ae3c054f4c5b6c137bbda3d701f58b50513",
+    "march_bellman_certificate.json": "c2fda7d1b451a5a0c832885fd53c4084d51f092a4f4aa1ce2becc827ab32d164"
+  },
+  "combination_source_sha256": "bbd8cefab0327bde8ee4fcfddfe91b75c1bae536a29d513839eedb2e4fb6f67f"
+}

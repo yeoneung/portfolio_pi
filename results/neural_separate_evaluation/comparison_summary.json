@@ -1,0 +1,50 @@
+{
+  "same_checkpoint": true,
+  "policy_updates_after_checkpoint": 0,
+  "original_direct_neural_bound_bp": 966.1235385645142,
+  "separate_coarse_bound_bp": 70.26877098802373,
+  "separate_refined_bound_bp": 13.344308234617182,
+  "refined_bound_bp_rounded_up": "13.345",
+  "improvement_factor_over_original_direct_certificate": 72.39967194839231,
+  "duality_pde_estimate_bp_NOT_certificate": 7.926151348452981,
+  "independent_pde_time_extrapolation_NOT_certificate": 0.4741227698374765,
+  "separate_evaluation_factor_NOT_certificate": 0.47412277452413676,
+  "difference_from_independent_pde_extrapolation": 4.686660282082755e-09,
+  "fixed_policy_factor_change_on_refinement_NOT_certificate": 7.169209670365717e-12,
+  "budget_bp": {
+    "candidate_factor_gap_bp_upper": 1.9199452949069356,
+    "bellman_residual_bp_upper": 3.212021750609281,
+    "frozen_policy_residual_bp_upper": 8.21234118910094,
+    "localization_bp_upper": 2.6042657334499614e-14
+  },
+  "fitting_seconds_by_candidate": {
+    "adapted_policy": 47.5707129999937,
+    "adapted_bellman": 117.94146689999616
+  },
+  "verification_wall_seconds_by_candidate": {
+    "adapted_policy": 788.9678026000038,
+    "adapted_bellman": 265.55158509999455
+  },
+  "verification_workers_by_candidate": {
+    "adapted_policy": {
+      "workers": 12,
+      "previous_workers": 4
+    },
+    "adapted_bellman": {
+      "workers": 4,
+      "previous_workers": null
+    }
+  },
+  "scope": "30 assets, one state variable, gamma=2, T=3, initial center",
+  "whole_space_certified": true,
+  "method": "frozen-policy upper comparison plus independent Bellman lower comparison and exit bounds",
+  "manuscript_updated": false,
+  "arxiv_manuscript_updated": false,
+  "public_repository_updated": false,
+  "inputs_sha256": {
+    "neural_welfare_bound.json": "b6a52e80269bcb9c459c2e667123a4d9a8c04883f15bf606608b359dd157c074",
+    "whole_space_coarse.json": "26d80751323608230bd8ab70cdb4d5bebedac5f4882dbc58232f8195463052ce",
+    "whole_space_refined.json": "b0e1e355d18e07aa7851d9da54dc2f8982497745f179b4caa6651210ab6ce89c"
+  },
+  "report_source_sha256": "b96b5d8901b35a0a464fa193074d547bf761909ee519f3b486fc8978eea00b8c"
+}

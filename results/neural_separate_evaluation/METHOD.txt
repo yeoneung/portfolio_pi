@@ -1,0 +1,152 @@
+Separate certification of the fixed 30-asset neural policy
+=========================================================
+
+Model and unchanged policy
+--------------------------
+Use results/neural_certificate/seed_11_final.json, with its exact stored
+binary64 constants, gamma=2, T=3, and one state variable. The checkpoint
+SHA-256 is 47628e7e10fb3619a9ac44c01c35270e7074bc56e0b13e679765ebb21b9ad9d7.
+On the original deployment interval, p=clip((lambda+Gamma*h_z)/2,-cap,cap),
+where h is the frozen neural log factor. Outside that interval, p=0;
+the original rule is used again after re-entry. There is no retraining,
+change of normalization, or replacement of this deployed policy.
+
+The evaluation interval has three times the original half-width. This
+enlarges only the verification domain. In particular, it does not extend
+the neural allocation rule to previously excluded states.
+
+Two comparison functions
+------------------------
+The fixed-policy factor satisfies, in remaining time tau,
+
+  g_tau = (Q/2) g_zz + (b-p.Gamma) g_z
+          + (sum_i(p_i^2-p_i*lambda_i)-r) g.
+
+Its approximation is u_pi=exp(-r*tau)*P_pi. The independent optimal-value
+comparison function is u_star=exp(-r*tau)*P_star. The second function is
+constructed with bounded-domain policy iteration, but is used only for
+the lower comparison bound; it is not substituted for the deployed policy.
+
+Define H(s)=sum_i max_{|p_i|<=cap_i}(p_i*s_i-p_i^2). With P>0,
+
+  R_pi(P) = P_tau -(Q/2)P_zz - b P_z
+            + sum_i[(p_i*lambda_i-p_i^2)P+p_i*Gamma_i*P_z],
+  R_star(P) = P_tau -(Q/2)P_zz - b P_z
+              + P*H(lambda+Gamma*P_z/P).
+
+The exponential risk-free factor cancels in the normalized residual.
+Using an independent Bellman comparison function avoids retaining the
+coarse analytic Jensen lower endpoint from the earlier 966 bp bound.
+It also avoids bounding the Hamiltonian improvement gap by its global
+maximum on an enlarged domain, where the fixed policy deliberately vanishes.
+
+Polynomial representation and full-cylinder verification
+-------------------------------------------------------
+Spatial functions use shared cubic Hermite nodal values/slopes and higher
+degree bubble functions. They are C1 at every spatial interface, including
+the original deployment boundaries. Time slabs share their endpoint
+coefficient vectors exactly. Dyadic coefficient quantization preserves
+these identities. P=1 on the initial and lateral traces. Thus u=1 at
+tau=0 and u=exp(-r*tau) on both artificial spatial boundaries.
+
+These functions are continuous in time and C1 in space and belong to
+W_p^{2,1} on the bounded cylinder for every finite p. Spatial second
+derivatives and time derivatives may jump between pieces. Both one-sided
+spatial residuals are enclosed. C1 spatial matching prevents interface
+local-time terms in the stopped comparison argument.
+
+Fitting uses CUDA float64 neural evaluations and CPU sparse linear solves.
+Fitting and diagnostic maxima are numerical proposals, not certificates.
+Verification converts coefficients with exact rational arithmetic and uses
+outward-rounded quadratic Taylor forms for polynomial and neural quantities.
+The neural clamp is bounded on each cell, including active-set changes.
+Positive denominators are checked before residual division. A rational
+area sum checks that accepted binary subdivisions cover each full time slab.
+
+The concurrent verifier processes disjoint time slabs. Its parent checks
+every slab index, exact endpoints, positivity, and completeness before setting
+bounded_domain_certified=true. Partial progress files remain false.
+
+Let U_star,j bound R_star(P_star)/P_star from above on slab j and let
+L_pi,j bound R_pi(P_pi)/P_pi from below. Define exact rational sums
+
+  A = sum_j Delta_tau_j * max(U_star,j,0),
+  B = sum_j Delta_tau_j * max(-L_pi,j,0).
+
+Homogeneity and the parabolic comparison principle give, at the initial state,
+
+  g_R^star >= u_star(T,z_c)*exp(-A),
+  g_R^pi   <= u_pi(T,z_c)*exp(B).
+
+Only these one-sided endpoints enter the welfare bound. The verifier also
+records the opposite residual endpoints. The scheme, rounding rules and
+comparison signs are tested against independent 80-digit scalar differentiation.
+
+Whole-space comparison
+----------------------
+Under the factor Feynman--Kac measure, the state drift is b-p.Gamma.
+The exposure caps imply the uniform centered drift-shift bound D. For
+W(x)=exp(a*x^2), 0<a<kappa/Q, the existing neural_welfare_bound verifier
+encloses L W <= C over the whole evaluation interval. The stopped Dynkin
+bound at x=0 gives
+
+  P(exit by T) <= C*T/(exp(a*R^2)-1).
+
+This argument permits an adapted drift; the tilted state is not assumed
+Gaussian. It applies to both the fixed and optimal policies.
+
+Let C_star be a nonnegative upper bound on
+sum_i(p_i^2-p_i*lambda_i)-r over all admissible controls on the enlarged
+interval. Let C_pi be the corresponding bound on the original interval;
+outside it the fixed policy has reaction -r<=0. Exact vertex bounds give
+both constants. Since the optimal continuation factor is nonnegative and
+the artificial trace is at most one,
+
+  g^star >= g_R^star - exp(C_star*T)*P_exit.
+
+The fixed-policy continuation factor is at most exp(C_pi*T), hence
+
+  g^pi <= g_R^pi + exp(2*C_pi*T)*P_exit.
+
+These intentionally simple tail estimates are already negligible for the
+enlarged interval. The final upper bound is evaluated with interval arithmetic:
+
+  CE_loss_bp <= 10000*(1 - lower(g^star)/upper(g^pi)).
+
+For gamma=2 this is the exact relative certainty-equivalent loss formula.
+The reported bound concerns the initial center and T=3, not all initial states.
+
+Reproduction (from the code root)
+---------------------------------
+1. Fit the fixed-policy and independent Bellman comparison functions:
+
+python experiments/neural_separate_evaluation.py --march --degree-time 5 --degree-space 8 --time-level 7 --outer 3 --knots results/neural_separate_evaluation/march_expanded_refined_adapted_knots.json --output results/neural_separate_evaluation/adapted_policy.json
+python experiments/neural_separate_evaluation.py --march --comparison --degree-time 5 --degree-space 8 --time-level 7 --outer 3 --knots results/neural_separate_evaluation/march_bellman_adapted_knots.json --output results/neural_separate_evaluation/adapted_bellman.json
+
+The fitting default is --device cuda; --device cpu uses the same equations.
+Numerical refitting may change the proposed coefficients across platforms;
+the saved exact candidate files can instead be verified directly.
+
+2. Certify every point in both cylinders:
+
+python experiments/verify_neural_separate_parallel.py results/neural_separate_evaluation/adapted_policy.json --padding 0.00003 --workers 4
+python experiments/verify_neural_separate_parallel.py results/neural_separate_evaluation/adapted_bellman.json --padding 0.00003 --workers 4
+
+3. Combine the two completed certificates and the exact exit bound:
+
+python experiments/neural_separate_welfare.py results/neural_separate_evaluation/adapted_policy.json results/neural_separate_evaluation/adapted_bellman.json --output results/neural_separate_evaluation/whole_space_refined.json
+
+4. Run the independent verification tests:
+
+python -m pytest tests/test_neural_separate.py tests/test_neural_log_barrier.py tests/test_neural_certificate_audit.py tests/test_neural_welfare_bound.py tests/test_neural_duality.py tests/test_local_policy.py -q
+
+Interpretation
+--------------
+The new result is a post-processing certificate for the same deployed neural
+policy. It is distinct from the existing duality estimates: its spatial and
+temporal residual bounds cover the continuous domain and include a whole-space
+tail estimate. The uncorrected difference between the two fitted factors is
+a numerical diagnostic; only the residual-corrected loss is a certificate.
+The independent Bellman comparison solve and verification cost must be included
+when reporting this computation. No claim about high-dimensional factor-state
+verification follows from this one-state, 30-asset experiment.
